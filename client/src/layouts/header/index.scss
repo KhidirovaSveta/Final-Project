@@ -1,0 +1,46 @@
+#Header {
+  .is-sticky {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .container {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 0;
+      .logo {
+        width: 180px;
+      }
+      a{
+        color: rgb(109, 79, 79);
+        text-decoration: none;
+        font-size: 18px;
+      }
+      ul {
+        display: flex;
+        column-gap: 35px;
+        list-style: none;
+        li {
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+      .action-icons{
+        a{
+          padding: 0 12px;
+        }
+      }
+    }
+  }
+}
