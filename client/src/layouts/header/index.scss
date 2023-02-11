@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 9;
     box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     padding-top: 0px;
@@ -18,17 +18,20 @@
       justify-content: space-between;
       align-items: center;
       padding: 17px 0;
-      .logo {
-        width: 180px;
+      .burger {
+        display: none;
       }
-      a{
+      .logo {
+        width: 14%;
+      }
+      a {
         color: rgb(109, 79, 79);
         text-decoration: none;
         font-size: 18px;
       }
       ul {
         display: flex;
-        column-gap: 35px;
+        column-gap: 25px;
         list-style: none;
         li {
           a {
@@ -36,9 +39,43 @@
           }
         }
       }
-      .action-icons{
-        a{
+      .action-icons {
+        a {
           padding: 0 12px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .navbar {
+      .burger {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        font-size: 2rem;
+      }
+      .table {
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        top: 100%;
+        padding: 20px;
+        z-index: 12;
+        left: 0%;
+        padding: 20px;
+        li {
+          padding: 10px 0;
+        }
+      }
+
+      li {
+        display: none;
+      }
+
+      .action-icons {
+        .fa-regular {
+          display: none;
         }
       }
     }

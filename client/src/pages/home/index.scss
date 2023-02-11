@@ -1,0 +1,104 @@
+#Home {
+  .container {
+    .third-section {
+      margin: 50px 0;
+      display: flex;
+      align-items: center;
+      column-gap: 75px;
+      .cakeImg {
+        width: 65%;
+      }
+      .third-section-text {
+        width: 35%;
+        .third-section-header {
+          font-size: 45px;
+          color: #6d4f4f;
+          width: 70%;
+        }
+        .third-section-parag {
+          margin: 17px 0;
+          color: #6d4f4f;
+          font-size: 17px;
+          line-height: 25px;
+          width: 90%;
+        }
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .third-section {
+        display: block;
+        padding: 0 15px;
+        .cakeImg {
+          width: 100%;
+        }
+        .third-section-text {
+          margin-top: 20px;
+          width: 100%;
+
+          .third-section-header {
+            margin-top: 20px;
+            width: 100%;
+          }
+          .third-section-parag {
+            line-height: 29px;
+            width: 100%;
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 765px) {
+      .third-section {
+        .third-section-header {
+          width: 100%;
+          font-size: 30px;
+        }
+      }
+    }
+
+    .fifth-section {
+      color: #6d4f4f;
+      .fifth-header {
+        font-size: 50px;
+        text-align: center;
+      }
+      .fifth-box {
+        margin-top: 50px;
+        display: flex;
+        text-align: center;
+
+        .sweeties-card {
+          img {
+            margin-bottom: 10px;
+          }
+          .fifth-card-header {
+            margin-bottom: 10px;
+          }
+          .fifth-card-parag {
+            font-size: 17px;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+      @media only screen and (max-width: 992px) {
+        .fifth-box{
+          flex-wrap: wrap;
+          gap: 30px 40px;
+          .sweeties-card {
+            width: 35%;
+            img {
+              margin-bottom: 10px;
+            }
+            .fifth-card-header {
+              margin-bottom: 10px;
+            }
+            .fifth-card-parag {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

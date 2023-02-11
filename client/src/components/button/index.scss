@@ -1,0 +1,15 @@
+.shopBtn{
+  padding: 14px 27px;
+  border: none;
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #e34875;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover{
+    background-color: #000;
+    transform: scale(1.05);
+  }
+}
