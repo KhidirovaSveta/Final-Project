@@ -73,6 +73,7 @@
       .sum-shop {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         background-color: #efeadf;
         .shop-card {
           background-color: #efeadf;
