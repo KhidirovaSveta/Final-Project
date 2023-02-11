@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import { Link } from "react-router-dom";
 import HeaderCarousel from "../../components/header-carousel";
 import Cake from "../../imagas/cake_image_card.webp";
 import Cake2 from "../../imagas/cake_image_card2.webp";
@@ -7,6 +8,12 @@ import cakeBox from "../../imagas/cake_box_1.avif";
 import cakeBox2 from "../../imagas/cake_box_2.avif";
 import cakeBox3 from "../../imagas/cake_box_3.avif";
 import Button from "../../components/button";
+import cakeCollaction from "../../imagas/cake_collection_1.webp";
+import cakeCollaction2 from "../../imagas/cake_collection_2.webp";
+import cakeCollaction3 from "../../imagas/cake_collection_3.webp";
+import cakeCollaction4 from "../../imagas/cake_collection_4.webp";
+import cakeCollaction5 from "../../imagas/cake_collection_5.webp";
+import cakeCollaction6 from "../../imagas/cake_collection_6.webp";
 
 const Home = () => {
   return (
@@ -31,9 +38,58 @@ const Home = () => {
             <Button btnName={"SHOP NOW"} />
           </div>
         </div>
+      </div>
 
-        {/* Fifth Section */}
+      {/* Fourth Section */}
 
+      <div className="fourth-section">
+        <h2 className="fourth-header">Summer shop</h2>
+
+        <div className="container">
+          <div className="sum-shop">
+            <div className="shop-card">
+              <Link to={`/`}>
+                <img src={cakeCollaction} alt="" width={"200px"} />
+                <h3 className="shop-card-header">Cake</h3>
+              </Link>
+            </div>
+            <div className="shop-card">
+            <Link to={`/`}>
+              <img src={cakeCollaction2} alt="" width={"200px"} />
+              <h3 className="shop-card-header">Pies</h3>
+            </Link>
+            </div>
+            <div className="shop-card">
+            <Link to={`/`}>
+              <img src={cakeCollaction3} alt="" width={"200px"} />
+              <h3 className="shop-card-header">Cookis</h3>
+            </Link>
+            </div>
+            <div className="shop-card">
+            <Link to={`/`}>
+              <img src={cakeCollaction4} alt="" width={"200px"} />
+              <h3 className="shop-card-header">Truffle</h3>
+            </Link>
+            </div>
+            <div className="shop-card">
+            <Link to={`/`}>
+              <img src={cakeCollaction5} alt="" width={"200px"} />
+              <h3 className="shop-card-header">Ice Cream</h3>
+            </Link>
+            </div>
+            <div className="shop-card">
+            <Link to={`/`}>
+              <img src={cakeCollaction6} alt="" width={"200px"} />
+              <h3 className="shop-card-header">Bundle</h3>
+            </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Fifth Section */}
+
+      <div className="container">
         <div className="fifth-section">
           <h1 className="fifth-header">Why choose sweeties</h1>
 

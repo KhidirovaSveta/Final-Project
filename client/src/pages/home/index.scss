@@ -55,7 +55,54 @@
         }
       }
     }
+  }
 
+  // Fourht section
+  .fourth-section {
+    color: #6d4f4f;
+    background-color: #efeadf;
+    padding: 80px 0;
+    margin-bottom: 50px;
+    .fourth-header {
+      text-align: center;
+      background-color: transparent;
+      font-size: 45px;
+      margin-bottom: 40px;
+    }
+    .container {
+      .sum-shop {
+        display: flex;
+        justify-content: space-between;
+        background-color: #efeadf;
+        .shop-card {
+          background-color: #efeadf;
+          img {
+            background-color: #efeadf;
+            margin-bottom: 10px;
+            transition: all .5s;
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+          a {
+            background-color: #efeadf;
+            text-decoration: none;
+            color: #6d4f4f;
+            cursor: pointer;
+          }
+          .shop-card-header {
+            background-color: #efeadf;
+            text-align: center;
+            font-size: 19px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  // Fifth section
+  .container {
     .fifth-section {
       color: #6d4f4f;
       .fifth-header {
@@ -82,7 +129,7 @@
         }
       }
       @media only screen and (max-width: 992px) {
-        .fifth-box{
+        .fifth-box {
           flex-wrap: wrap;
           gap: 30px 40px;
           .sweeties-card {
@@ -100,7 +147,7 @@
         }
       }
     }
-    .sixth-section{
+    .sixth-section {
       margin-top: 150px;
     }
   }
