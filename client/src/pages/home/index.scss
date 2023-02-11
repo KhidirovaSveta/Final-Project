@@ -1,6 +1,6 @@
 #Home {
   .container {
-    .third-section {
+    .third-and-sixth-section {
       margin: 50px 0;
       display: flex;
       align-items: center;
@@ -8,14 +8,14 @@
       .cakeImg {
         width: 65%;
       }
-      .third-section-text {
+      .third-sixth-section-text {
         width: 35%;
-        .third-section-header {
+        .third-sixth-section-header {
           font-size: 45px;
           color: #6d4f4f;
-          width: 70%;
+          width: 75%;
         }
-        .third-section-parag {
+        .third-sixth-section-parag {
           margin: 17px 0;
           color: #6d4f4f;
           font-size: 17px;
@@ -25,21 +25,21 @@
       }
     }
     @media only screen and (max-width: 992px) {
-      .third-section {
+      .third-and-sixth-section {
         display: block;
         padding: 0 15px;
         .cakeImg {
           width: 100%;
         }
-        .third-section-text {
+        .third-sixth-section-text {
           margin-top: 20px;
           width: 100%;
 
-          .third-section-header {
+          .third-sixth-section-header {
             margin-top: 20px;
             width: 100%;
           }
-          .third-section-parag {
+          .third-sixth-section-parag {
             line-height: 29px;
             width: 100%;
             margin-bottom: 25px;
@@ -48,8 +48,8 @@
       }
     }
     @media only screen and (max-width: 765px) {
-      .third-section {
-        .third-section-header {
+      .third-and-sixth-section {
+        .third-sixth-section-header {
           width: 100%;
           font-size: 30px;
         }
@@ -99,6 +99,9 @@
           }
         }
       }
+    }
+    .sixth-section{
+      margin-top: 150px;
     }
   }
 }

@@ -16,19 +16,19 @@ const Home = () => {
       <div className="container">
         {/* Third Section */}
 
-        <div className="third-section">
+        <div className="third-and-sixth-section">
           <img src={Cake} alt="" className="cakeImg" />
 
-          <div className="third-section-text">
-            <h2 className="third-section-header">
+          <div className="third-sixth-section-text">
+            <h2 className="third-sixth-section-header">
               Don’t let summer float away
             </h2>
-            <p className="third-section-parag">
+            <p className="third-sixth-section-parag">
               Snag some cool treats now! And we’ll deliver them straight to you
               in temperature controlled packaging, so they’re cold and ready to
               eat.You don’t ehave to get out of the pool
             </p>
-            <Button />
+            <Button btnName={"SHOP NOW"} />
           </div>
         </div>
 
@@ -66,20 +66,24 @@ const Home = () => {
           </div>
         </div>
 
-        {/* six section */}
+        {/* sixth section */}
 
-        <div className="third-section">
-          <div className="third-section-text">
-            <h2 className="third-section-header">Hey, nice to treat you</h2>
-            <p className="third-section-parag">
-              Snag some cool treats now! And we’ll deliver them straight to you
-              in temperature controlled packaging, so they’re cold and ready to
-              eat.You don’t ehave to get out of the pool
-            </p>
-            <Button />
+        <div className="sixth-section">
+          <div className="third-and-sixth-section">
+            <div className="third-sixth-section-text">
+              <h2 className="third-sixth-section-header">
+                Hey, nice to treat you
+              </h2>
+              <p className="third-sixth-section-parag">
+                Snag some cool treats now! And we’ll deliver them straight to
+                you in temperature controlled packaging, so they’re cold and
+                ready to eat.You don’t ehave to get out of the pool
+              </p>
+              <Button btnName={"LEARN MORE"} className="learnBtn" />
+            </div>
+            <br />
+            <img src={Cake2} alt="" className="cakeImg" />
           </div>
-
-          <img src={Cake2} alt="" className="cakeImg" />
         </div>
       </div>
     </div>
