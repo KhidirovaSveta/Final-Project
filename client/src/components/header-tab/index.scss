@@ -16,24 +16,39 @@
       cursor: pointer;
     }
   }
-  .tabText{
+  .tabText {
     width: 550px;
     position: absolute;
     top: 22%;
     left: 7%;
     padding: 32px 25px;
     color: #6d4f4f;
-    
-    .tabHeaderTxt{
+
+    .tabHeaderTxt {
       font-weight: 700;
       font-size: 50px;
       margin-bottom: 12px;
     }
-    .tabHeaderParag{
+    .tabHeaderParag {
       font-weight: 500;
       font-size: 21px;
       width: 95%;
       margin-bottom: 20px;
+    }
+  }
+  @media only screen and (max-width: 765px) {
+    .tabBtn {
+      position: static;
+      display: flex;
+      justify-content: center;
+      .period {
+        margin: 0 10px;
+      }
+    }
+    .tabText {
+      text-align: center;
+      position: static;
+      width: 100%;
     }
   }
 }
