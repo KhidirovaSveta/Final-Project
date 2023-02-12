@@ -6,7 +6,9 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
+  FaArrowRight,
 } from "react-icons/fa";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 import masterCard from "../../imagas/icons8-mastercard-30.svg";
 import visaCard from "../../imagas/icons8-visa-30.svg";
 import americanExp from "../../imagas/icons8-american-express-30.svg";
@@ -24,11 +26,15 @@ const Footer = () => {
               Enter your email below to be the first to know about new
               collections and product launches.
             </p>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="footerInput"
-            />
+            <div className="input">
+              <HiOutlineEnvelope className="inputMessage"/>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="footerInput"
+              />
+              <FaArrowRight className="inputNav" />
+            </div>
           </div>
 
           <div className="footer-list">
@@ -87,13 +93,19 @@ const Footer = () => {
             <a href="https://twitter.com/" target={"_blank"}>
               <FaTwitter className="social-media" />
             </a>
-              <img src={visaCard} alt="" />
-              <img src={masterCard} alt="" width={"35px"} height={"30px"} />
-              <img src={americanExp} alt="" />
-              <img src={paypal} alt="" />
-              <img src={discover} alt="" />
-            </div>
+            <img src={visaCard} alt="" title="Visa" />
+            <img
+              src={masterCard}
+              alt=""
+              width={"35px"}
+              height={"30px"}
+              title="Mastercard"
+            />
+            <img src={americanExp} alt="" title="American Express" />
+            <img src={paypal} alt="" title="PayPal" />
+            <img src={discover} alt="" title="Discover" />
           </div>
+        </div>
       </div>
     </div>
   );
