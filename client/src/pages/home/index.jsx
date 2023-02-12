@@ -61,7 +61,7 @@ const Home = () => {
             <div className="shop-card">
               <Link to={`/`}>
                 <img src={cakeCollaction3} alt="" width={"200px"} />
-                <h3 className="shop-card-header">Cookis</h3>
+                <h3 className="shop-card-header">Cookies</h3>
               </Link>
             </div>
             <div className="shop-card">

@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './layouts/footer'
 import Header from './layouts/header'
 import InfoBox from './layouts/header/info'
-import Home from './pages/home'
+import Routing from './route'
 
 function App() {
 
@@ -12,9 +11,7 @@ function App() {
     <div className="App">
      <InfoBox/>
      <Header/>
-     <Routes>
-      <Route path='/' element={<Home/>}/>
-     </Routes>
+     <Routing/>
      <Footer/>
     </div>
   )

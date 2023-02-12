@@ -69,7 +69,7 @@ const Header = () => {
           </ul>
 
           <div className="action-icons">
-            <NavLink to={"/"}> <i className="fa-regular fa-user"></i> </NavLink>
+            <NavLink to={"/login"}> <i className="fa-regular fa-user"></i> </NavLink>
 
             <NavLink to={"/"}> <i className="fa-regular fa-star"></i> </NavLink>
 
