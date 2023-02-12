@@ -25,16 +25,18 @@
         .input {
           position: relative;
           background-color: transparent;
-          width: 62%;
+          width: 60%;
           .footerInput {
-            padding: 12px 35px;
+            padding: 14px 38px;
+            font-size: 15px;
             width: 100%;
             border: none;
             border-radius: 7px;
+            color: #6d4f4f;
           }
           .inputMessage{
             position: absolute;
-            bottom: 12px;
+            bottom: 14px;
             left: 10px;
             font-size: 18px;
           }
@@ -94,8 +96,11 @@
       color: #6d4f4f;
       display: flex;
       justify-content: space-between;
+      padding-top: 40px;
       .footer-txt {
         background-color: transparent;
+        font-weight: 600;
+        font-size: 17px;
       }
       .icons {
         background-color: transparent;

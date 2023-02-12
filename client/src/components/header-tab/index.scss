@@ -1,0 +1,39 @@
+.headerTab {
+  position: relative;
+  .tabBtn {
+    position: absolute;
+    top: 40%;
+    right: 3%;
+    display: block;
+    background-color: transparent;
+    .period {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-bottom: 25px;
+      background-color: #6d4f4f;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .tabText{
+    width: 550px;
+    position: absolute;
+    top: 22%;
+    left: 7%;
+    padding: 32px 25px;
+    color: #6d4f4f;
+    
+    .tabHeaderTxt{
+      font-weight: 700;
+      font-size: 50px;
+      margin-bottom: 12px;
+    }
+    .tabHeaderParag{
+      font-weight: 500;
+      font-size: 21px;
+      width: 95%;
+      margin-bottom: 20px;
+    }
+  }
+}
