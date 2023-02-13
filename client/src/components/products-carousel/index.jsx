@@ -39,9 +39,10 @@ const Carousel = () => {
             return (
               <SwiperSlide key={product._id}>
                 <div className="card">
-                  <Link to={"/"}>
+                  <Link to={`/details/${product._id}`}>
                     <img src={product.image1} alt="" className="cardImg" />
                     <img src={product.image2} alt="" className="img-top" />
+                    <button className="quick-add-btn"> QUICK ADD</button>
                     <div className="product-info">
                       <p className="productName">{product.name}</p>
                       <span className="price">${product.price}.00</span>

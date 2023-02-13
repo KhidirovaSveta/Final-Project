@@ -47,6 +47,12 @@ body {
     text-align: start;
     display: inline-block;
     position: relative;
+    .quick-add-btn {
+      display: none;
+      position: relative;
+      top: 0px;
+    }
+    
     &:hover {
       .img-top {
         display: inline;
