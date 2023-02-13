@@ -14,12 +14,20 @@ import cakeCollaction4 from "../../imagas/cake_collection_4.webp";
 import cakeCollaction5 from "../../imagas/cake_collection_5.webp";
 import cakeCollaction6 from "../../imagas/cake_collection_6.webp";
 import HeaderTab from "../../components/header-tab";
+import Carousel from "../../components/products-carousel";
 
 const Home = () => {
   return (
     <div id="Home">
       <HeaderTab />
+
+      <div className="second-section">
+        <h1 className="second-section-header">More cake, cookies, pie</h1>
+        <Carousel />
+      </div>
+
       <div className="container">
+
         {/* Third Section */}
 
         <div className="third-and-sixth-section">
