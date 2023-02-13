@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <div id="Home">
       <HeaderTab />
-
       <div className="second-section">
         <h1 className="second-section-header">More cake, cookies, pie</h1>
         <Carousel />

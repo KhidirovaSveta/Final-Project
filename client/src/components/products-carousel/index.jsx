@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/action/products.action";
+import "swiper/css/navigation";
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
@@ -30,9 +31,7 @@ const Carousel = () => {
           slidesPerView={4}
           spaceBetween={30}
           loop={"true"}
-          pagination={{
-            clickable: true,
-          }}
+          navigation={true}
           modules={[Navigation]}
           className="mySwiper"
         >
@@ -42,8 +41,11 @@ const Carousel = () => {
                 <div className="card">
                   <Link to={"/"}>
                     <img src={product.image1} alt="" className="cardImg" />
-                    <p className="productName">{product.name}</p>
-                    <span className="price">${product.price}.00</span>
+                    <img src={product.image2} alt="" className="img-top" />
+                    <div className="product-info">
+                      <p className="productName">{product.name}</p>
+                      <span className="price">${product.price}.00</span>
+                    </div>
                   </Link>
                 </div>
               </SwiperSlide>
