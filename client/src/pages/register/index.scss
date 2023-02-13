@@ -14,13 +14,61 @@
         align-items: center;
         column-gap: 10px;
         margin-top: 15px;
-        margin-bottom: 85px;
+        margin-bottom: 105px;
         a {
           text-decoration: none;
           color: #6d4f4f;
         }
         .right {
           opacity: 0.5;
+        }
+      }
+      .register {
+        margin: 0 auto;
+        width: 370px;
+        .registrHeader {
+          font-size: 22px;
+          margin-bottom: 12px;
+        }
+        .registInputs {
+          margin-bottom: 4px;
+          .borderPink {
+            &:focus {
+              border: 2px solid #e34875;
+            }
+          }
+          input {
+            width: 100%;
+            padding: 12px 10px;
+            font-size: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(153, 153, 153, 0.4);
+            border-radius: 5px;
+          }
+        }
+        .btn {
+          width: 100%;
+          padding: 14px 37px;
+          border-radius: 8px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all .4s;
+          &:hover{
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.03);
+          }
+        }
+        .regBtn {
+          margin: 10px 0;
+          border: none;
+          background-color: #e34875;
+          color: #fff;
+        }
+        .loginBtn {
+          background-color: transparent;
+          border: 1px solid #000;
+          margin-bottom: 55px;
         }
       }
     }

@@ -77,6 +77,35 @@
           }
         }
       }
+      @media only screen and (max-width: 992px) {
+        .login-container {
+          padding: 10px 12px;
+          .login{
+            width: 40%;
+            .signinBtn{
+              margin-bottom: 50px;
+            }
+          }
+          .newCus{
+            width: 40%;
+          }
+        }
+      }
+      @media only screen and (max-width: 765px) {
+        .login-container {
+          display: block;
+          padding: 10px 12px;
+          .login{
+            width: 100%;
+            .signinBtn{
+              margin-bottom: 50px;
+            }
+          }
+          .newCus{
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
