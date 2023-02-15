@@ -1,0 +1,27 @@
+.container {
+  .carousel {
+    img {
+      padding: 0 15px;
+    }
+    .productName {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+  }
+  .slick-arrow,
+  .slick-next {
+    &::before {
+      content: "→";
+      color: rgb(31, 31, 31);
+      font-size: 30px;
+    }
+  }
+  .slick-arrow,
+  .slick-prev {
+    &::before {
+      content: "→";
+      color: rgb(31, 31, 31);
+      font-size: 30px;
+    }
+  }
+}
