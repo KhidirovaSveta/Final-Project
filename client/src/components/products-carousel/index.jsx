@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/action/products.action";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
@@ -39,8 +39,8 @@ const Carousel = () => {
             return (
               <SwiperSlide key={product._id}>
                 <div className="card">
-                  <Link to={`/details/${product._id}`}>
                     <div className="images">
+                  <Link to={`/details/${product._id}`}>
                       <img
                         src={product.image1}
                         alt=""
@@ -51,13 +51,13 @@ const Carousel = () => {
                         alt=""
                         className="img-top"
                       />
+                  </Link>
                       <button className="quick-add-btn"> QUICK ADD</button>
                     </div>
                     <div className="product-info">
                       <p className="productName">{product.name}</p>
                       <span className="price">${product.price}.00</span>
                     </div>
-                  </Link>
                 </div>
               </SwiperSlide>
             );

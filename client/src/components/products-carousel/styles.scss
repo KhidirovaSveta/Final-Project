@@ -50,17 +50,16 @@ body {
     .images {
       .quick-add-btn {
         box-sizing: border-box;
-        display: none;
+        visibility: hidden;
         position: relative;
         bottom: 70px;
         padding: 14px 0;
         width: 80%;
-        margin: 0 auto;
+        margin-left: 10%;
         border-radius: 7px;
         border: none;
         cursor: pointer;
-        transition: all 0.9s;
-        transition-timing-function: ease;
+        transition: all 0.1s;
         &:hover{
           background-color: #000;
           color: #fff;
@@ -68,14 +67,14 @@ body {
       }
       &:hover {
         .img-top {
-          display: inline;
+          display: inline-block;
           width: 100%;
           height: 64%;
           transition: all 0.9s;
           transition-timing-function: ease;
         }
         .quick-add-btn {
-          display: block;
+          visibility: visible;
           position: relative;
           z-index: 2;
         }
@@ -93,14 +92,14 @@ body {
         }
       }
     }
-    .cardImg {
-      margin-bottom: 15px;
+    .images {
+      margin-bottom: -21px;
     }
     a {
-      color: #6d4f4f;
       text-decoration: none;
     }
     .productName {
+      color: #6d4f4f;
       font-weight: 600;
       margin-bottom: 15px;
     }
