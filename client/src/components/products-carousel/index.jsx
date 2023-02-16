@@ -11,6 +11,7 @@ import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/action/products.action";
 // import "swiper/css/navigation";
+import { CiStar } from "react-icons/ci";
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
@@ -52,6 +53,7 @@ const Carousel = () => {
                         className="img-top"
                       />
                   </Link>
+                    <CiStar className="wishlist"/>
                       <button className="quick-add-btn"> QUICK ADD</button>
                     </div>
                     <div className="product-info">
