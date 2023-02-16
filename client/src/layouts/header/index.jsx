@@ -72,7 +72,7 @@ const Header = () => {
           <div className="action-icons">
             <NavLink to={"/login"}> <i className="fa-regular fa-user"></i> </NavLink>
 
-            <NavLink to={"/"}> <i className="fa-regular fa-star"></i> </NavLink>
+            <NavLink to={"/wishlist"}> <i className="fa-regular fa-star"></i> </NavLink>
 
             <NavLink to={"/"}> <i className="fa-solid fa-bag-shopping"></i> </NavLink>
 

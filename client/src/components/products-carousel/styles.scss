@@ -48,6 +48,9 @@ body {
     display: inline-block;
     position: relative;
     .images {
+      .action-btn{
+        border: none;
+      }
       .action-icon {
         box-sizing: border-box;
         visibility: hidden;
@@ -90,7 +93,7 @@ body {
         .img-top {
           display: inline-block;
           width: 100%;
-          height: 64%;
+          height: 74%;
           transition: all 0.9s;
           transition-timing-function: ease;
         }

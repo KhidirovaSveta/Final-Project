@@ -9,10 +9,11 @@ import "./styles.scss";
 import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-import { productsAction } from "../../redux/action/products.action";
+import { productsAction, wishlistBasketAction } from "../../redux/action/products.action";
 // import "swiper/css/navigation";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
+// import ModalView from "../quick-view";
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
@@ -25,6 +26,10 @@ const Carousel = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const handleWishList = (obj) => {
+    dispatch(wishlistBasketAction(obj));
+  };
 
   return (
     <div>
@@ -46,13 +51,17 @@ const Carousel = () => {
                       <img src={product.image1} alt="" className="cardImg" />
                       <img src={product.image2} alt="" className="img-top" />
                     </Link>
-                      <CiStar className="wishlist action-icon" /><br />
-                      <FaRegEye className="view action-icon" />
+                    <button className="action-btn" onClick={() => handleWishList(product)}>
+                      <CiStar className="wishlist action-icon" />
+                    </button>
+                    <br />
+                    <FaRegEye className="view action-icon" />
                     <button className="quick-add-btn"> QUICK ADD</button>
                   </div>
                   <div className="product-info">
                     <p className="productName">{product.name}</p>
                     <span className="price">${product.price}.00</span>
+                    {/* <ModalView/> */}
                   </div>
                 </div>
               </SwiperSlide>

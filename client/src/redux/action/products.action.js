@@ -20,3 +20,20 @@ export const productsAction = () => {
     }
   };
 };
+
+export const wishlistBasketAction = (obj) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "WISHLIST_BASKET",
+      payload: obj,
+    });
+  };
+};
+export const delwishlistBasketAction = (obj) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "DELETE_WISHLIST_BASKET",
+      payload: obj,
+    });
+  };
+};
