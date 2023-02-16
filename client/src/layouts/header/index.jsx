@@ -3,6 +3,8 @@ import Logo from "../../imagas/cake_logo.avif"
 import { NavLink } from "react-router-dom";
 import {RxHamburgerMenu} from 'react-icons/rx'
 import "./index.scss"
+import { IoBagOutline } from "react-icons/io5";
+import { CiStar, CiUser } from "react-icons/ci";
 
 const Header = () => {
     const [sticky, setSticky] = useState("");
@@ -70,11 +72,11 @@ const Header = () => {
           </ul>
 
           <div className="action-icons">
-            <NavLink to={"/login"}> <i className="fa-regular fa-user"></i> </NavLink>
+            <NavLink to={"/login"}> <CiUser className="action-icon"/> </NavLink>
 
-            <NavLink to={"/wishlist"}> <i className="fa-regular fa-star"></i> </NavLink>
+            <NavLink to={"/wishlist"}> <CiStar className="action-icon"/> </NavLink>
 
-            <NavLink to={"/"}> <i className="fa-solid fa-bag-shopping"></i> </NavLink>
+            <NavLink to={"/"}> <IoBagOutline className="action-icon"/> </NavLink>
 
           </div>
            

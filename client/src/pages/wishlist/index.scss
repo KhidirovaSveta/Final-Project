@@ -1,0 +1,28 @@
+.wishList {
+    margin: 50px 0;
+  .container {
+    table {
+      text-align: center;
+      margin-top: 50px;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 5px 35px;
+      border-collapse: collapse;
+      border-top: 1px solid #6d4f4f;
+      border-bottom: 1px solid #6d4f4f;
+    }
+    tbody {
+      .wishImg {
+        width: 170px;
+        padding: 10px 0;
+      }
+      .delBtn {
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+  }
+}
