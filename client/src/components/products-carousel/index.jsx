@@ -10,9 +10,10 @@ import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  delwishlistBasketAction,
+  cardAction,
+  delwishlistAction,
   productsAction,
-  wishlistBasketAction,
+  wishlistAction,
 } from "../../redux/action/products.action";
 // import "swiper/css/navigation";
 import { CiStar } from "react-icons/ci";
@@ -21,8 +22,8 @@ import { FaRegEye } from "react-icons/fa";
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
-  const wishlist = useSelector((state) => state.wishlistBasketReducer);
-
+  const wishlist = useSelector((state) => state.wishlistReducer);
+  const card = useSelector((state) => state.cardReducer);
   const dispatch = useDispatch();
 
   const getData = () => {
@@ -33,12 +34,16 @@ const Carousel = () => {
     getData();
   }, []);
 
-  const handleWishList = (obj) => {
-    dispatch(wishlistBasketAction(obj));
-  };
-  const handleDelete = (e) => {
-    dispatch(delwishlistBasketAction(e));
-  };
+    const handleCard = (obj) => {
+     dispatch(cardAction(obj));
+   };
+
+  // const handleWishList = (obj) => {
+  //   dispatch(wishlistBasketAction(obj));
+  // };
+  // const handleDelete = (e) => {
+  //   dispatch(delwishlistBasketAction(e));
+  // };
 
   return (
     <div>
@@ -79,10 +84,10 @@ const Carousel = () => {
                       <img src={product.image2} alt="" className="img-top" />
                     </Link>
 
-                    {wishlist.find((elem) => elem._id === product._id) ? (
+                    {wishlist.find((e) => e._id === product._id) ? (
                       <div
                         onClick={() =>
-                          dispatch(delwishlistBasketAction(product._id))
+                          dispatch(delwishlistAction(product._id))
                         }
                         className="icon"
                       >
@@ -90,7 +95,7 @@ const Carousel = () => {
                       </div>
                     ) : (
                       <div
-                        onClick={() => dispatch(wishlistBasketAction(product))}
+                        onClick={() => dispatch(wishlistAction(product))}
                         className="icon"
                       >
                         <CiStar className="wishlist action-icon" />
@@ -99,7 +104,7 @@ const Carousel = () => {
 
                     <br />
                     <FaRegEye className="view action-icon" />
-                    <button className="quick-add-btn"> QUICK ADD</button>
+                    <button className="quick-add-btn" onClick={() => handleCard(product)}> QUICK ADD</button>
                   </div>
                   <div className="product-info">
                     <p className="productName">{product.name}</p>

@@ -21,18 +21,27 @@ export const productsAction = () => {
   };
 };
 
-export const wishlistBasketAction = (obj) => {
+export const wishlistAction = (obj) => {
   return async (dispatch) => {
     dispatch({
-      type: "WISHLIST_BASKET",
+      type: "WISHLIST",
       payload: obj,
     });
   };
 };
-export const delwishlistBasketAction = (obj) => {
+export const delwishlistAction = (obj) => {
   return async (dispatch) => {
     dispatch({
-      type: "DELETE_WISHLIST_BASKET",
+      type: "DELETE_WISHLIST",
+      payload: obj,
+    });
+  };
+};
+
+export const cardAction = (obj) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "CARD",
       payload: obj,
     });
   };

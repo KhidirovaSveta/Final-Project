@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../imagas/cake_logo.avif"
+import Logo from "../../images/cake_logo.avif"
 import { NavLink } from "react-router-dom";
 import {RxHamburgerMenu} from 'react-icons/rx'
 import "./index.scss"
@@ -76,7 +76,7 @@ const Header = () => {
 
             <NavLink to={"/wishlist"}> <CiStar className="action-icon"/> </NavLink>
 
-            <NavLink to={"/"}> <IoBagOutline className="action-icon"/> </NavLink>
+            <NavLink to={"/card"}> <IoBagOutline className="action-icon"/> </NavLink>
 
           </div>
            

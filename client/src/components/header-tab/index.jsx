@@ -1,7 +1,7 @@
 import React from "react";
-import Cake1 from "../../imagas/cake_slide_1.webp";
-import Cake2 from "../../imagas/cake_slide_2.webp";
-import Cake3 from "../../imagas/cake_slide_3.webp";
+import Cake1 from "../../images/cake_slide_1.webp";
+import Cake2 from "../../images/cake_slide_2.webp";
+import Cake3 from "../../images/cake_slide_3.webp";
 import {
   Tabs,
   TabList,

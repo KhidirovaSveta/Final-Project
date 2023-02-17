@@ -9,11 +9,11 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { HiOutlineEnvelope } from "react-icons/hi2";
-import masterCard from "../../imagas/icons8-mastercard-30.svg";
-import visaCard from "../../imagas/icons8-visa-30.svg";
-import americanExp from "../../imagas/icons8-american-express-30.svg";
-import paypal from "../../imagas/icons8-paypal-30.svg";
-import discover from "../../imagas/icons8-discover-card.svg";
+import masterCard from "../../images/icons8-mastercard-30.svg";
+import visaCard from "../../images/icons8-visa-30.svg";
+import americanExp from "../../images/icons8-american-express-30.svg";
+import paypal from "../../images/icons8-paypal-30.svg";
+import discover from "../../images/icons8-discover-card.svg";
 
 const Footer = () => {
   return (

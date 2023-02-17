@@ -1,8 +1,8 @@
-export default function wishlistBasketReducer(state = [], action) {
+export default function wishlistReducer(state = [], action) {
   switch (action.type) {
-    case "WISHLIST_BASKET":
+    case "WISHLIST":
       return [...state, action.payload];
-    case "DELETE_WISHLIST_BASKET":
+    case "DELETE_WISHLIST":
       return [...state.filter((product) => product._id !== action.payload._id)];
 
     default:
