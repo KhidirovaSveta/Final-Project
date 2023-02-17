@@ -68,15 +68,22 @@ body {
           transform: scale(1.1);
         }
       }
-      .wishlist {
-        margin-bottom: 5px;
+      .wishlist-added{
+        background-color: #000;
+        color: #fff;
+      }
+      .view{
+        position: relative;
+        left: 250px;
+        bottom: 295px;
+
       }
 
       .quick-add-btn {
         box-sizing: border-box;
         visibility: hidden;
         position: relative;
-        bottom: 155px;
+        bottom: 175px;
         padding: 14px 0;
         width: 80%;
         margin-left: 10%;
@@ -93,7 +100,7 @@ body {
         .img-top {
           display: inline-block;
           width: 100%;
-          height: 74%;
+          height: 73%;
           transition: all 0.9s;
           transition-timing-function: ease;
         }

@@ -24,7 +24,6 @@ const Wishlist = () => {
             <th> Unit price </th>
             <th> Stock status </th>
             <th> Brand</th>
-            <th> Detail </th>
           </thead>
 
           <tbody>
@@ -43,7 +42,9 @@ const Wishlist = () => {
 
                   <td>
                     {" "}
+                    <Link to={`/details/${products._id}`}>
                     <img src={products.image1} alt="" className="wishImg" />
+                    </Link>
                   </td>
                   <td> {products.name}</td>
                   <td>
@@ -54,12 +55,6 @@ const Wishlist = () => {
                     {products.availability}
                   </td>
                   <td>{products.brand}</td>
-                  <td>
-                    <Link to={`/details/${products._id}`}>
-                      {" "}
-                      Product Detail{" "}
-                    </Link>
-                  </td>
                   <td>
                   {" "}
                   <button>
