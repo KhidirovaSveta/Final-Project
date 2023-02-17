@@ -46,3 +46,12 @@ export const cardAction = (obj) => {
     });
   };
 };
+
+export const deleteCardAction = (obj) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "DELETE_CARD",
+      payload: obj,
+    });
+  };
+};

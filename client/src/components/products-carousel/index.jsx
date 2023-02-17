@@ -77,7 +77,7 @@ const Carousel = () => {
           {productCard?.data?.map((product) => {
             return (
               <SwiperSlide key={product._id}>
-                <div className="card">
+                <div className="cards">
                   <div className="images">
                     <Link to={`/details/${product._id}`}>
                       <img src={product.image1} alt="" className="cardImg" />

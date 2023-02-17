@@ -1,20 +1,22 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import Cake from "../../images/cake_image_card.webp";
-import Cake2 from "../../images/cake_image_card2.webp";
-import cakeBox from "../../images/cake_box_1.avif";
-import cakeBox2 from "../../images/cake_box_2.avif";
-import cakeBox3 from "../../images/cake_box_3.avif";
-import Button from "../../components/button";
-import cakeCollaction from "../../images/cake_collection_1.webp";
-import cakeCollaction2 from "../../images/cake_collection_2.webp";
-import cakeCollaction3 from "../../images/cake_collection_3.webp";
-import cakeCollaction4 from "../../images/cake_collection_4.webp";
-import cakeCollaction5 from "../../images/cake_collection_5.webp";
-import cakeCollaction6 from "../../images/cake_collection_6.webp";
-import HeaderTab from "../../components/header-tab";
-import Carousel from "../../components/products-carousel";
+import Cake from "../../../images/cake_image_card.webp";
+import Cake2 from "../../../images/cake_image_card2.webp";
+
+import cakeBox from "../../../images/cake_box_1.avif";
+import cakeBox2 from "../../../images/cake_box_1.avif";
+import cakeBox3 from "../../../images/cake_box_1.avif";
+
+import Button from "../../../components/button";
+import cakeCollaction from "../../../images/cake_collection_1.webp";
+import cakeCollaction2 from "../../../images/cake_collection_2.webp";
+import cakeCollaction3 from "../../../images/cake_collection_3.webp";
+import cakeCollaction4 from "../../../images/cake_collection_4.webp";
+import cakeCollaction5 from "../../../images/cake_collection_5.webp";
+import cakeCollaction6 from "../../../images/cake_collection_6.webp";
+import HeaderTab from "../../../components/header-tab";
+import Carousel from "../../../components/products-carousel";
 
 const Home = () => {
   return (
@@ -26,7 +28,6 @@ const Home = () => {
       </div>
 
       <div className="container">
-
         {/* Third Section */}
 
         <div className="third-and-sixth-section">

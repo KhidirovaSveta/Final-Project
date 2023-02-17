@@ -1,16 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
+import { deleteCardAction } from "../../../redux/action/products.action";
 
 const Card = () => {
   const card = useSelector((state) => state.cardReducer);
 
   const dispatch = useDispatch();
 
+  const handleDelete = (e) => {
+    dispatch(deleteCardAction(e));
+  };
+
   return (
-    <div className="wishList">
+    <div className="card">
       <div className="cardHeader">
         <h1 className="shopCard">Shopping Cart</h1>
         <div className="navlink">
@@ -24,7 +29,6 @@ const Card = () => {
         <table>
           <thead>
             <th> Product </th>
-            <th> </th>
             <th> Price </th>
             <th> Quantity</th>
             <th> Total </th>
@@ -34,24 +38,21 @@ const Card = () => {
             {card?.map((products, id) => {
               return (
                 <tr key={id}>
-                  <td>
+                  <td className="card-frst-section">
                     {" "}
-                    <img src={products.image1} alt="" className="wishImg" />
-                  </td>
-                  <td>
-                    {" "}
-                    {products.name} <br />
-                    <button
-                      className="delBtn"
-                      // onClick={() => handleDelete(products)}
-                    >
-                      Remove
-                    </button>
+                    <img src={products.image1} alt="" className="cardImg" />
+                    <div className="card-info">
+                    <h3>{products.name}</h3>
+                      <button
+                        className="delBtn"
+                        onClick={() => handleDelete(products)}
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </td>
                   <td>${products?.price}</td>
-                  <td className="product">
-                  Quantity
-                  </td>
+                  <td className="product">Quantity</td>
                   <td>total</td>
                 </tr>
               );

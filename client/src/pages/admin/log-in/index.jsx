@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
-import Button from "../../components/button";
+import Button from "../../../components/button";
 
 const LogIn = () => {
   return (
