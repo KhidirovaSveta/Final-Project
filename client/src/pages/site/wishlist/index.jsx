@@ -34,26 +34,27 @@ const Wishlist = () => {
 
       <div className="container">
         <div className="wish-cards">
-          {wishlist?.map((products) => {
+          {wishlist?.map((product) => {
             return (
               <div className="wish-card">
-                <Link to={`/details/${products._id}`}>
-                  <img src={products.image1} alt="" className="wishImg" />
+                <Link to={`/details/${product._id}`}>
+                  <img src={product.image1} alt="" className="wishImg" />
                   <div className="wish-info">
                     <div className="w-i">
-                      <h3> {products.name}</h3>
+                      <h3> {product.name}</h3>
                       <button
                         className="delBtn"
-                        onClick={() => handleDelete(products)}
+                        onClick={() => handleDelete(product)}
                       >
                         <IoTrashOutline />
                       </button>
                     </div>
+                      <p>${product.price}.00</p>
                   </div>
                 </Link>
                 <button
                   className="add-to-cardBtn"
-                  onClick={() => handleCard(products)}
+                  onClick={() => handleCard(product)}
                 >
                   {" "}
                   Add to Card{" "}

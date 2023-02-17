@@ -1,0 +1,121 @@
+#accordion {
+  background-color: #efeadf;
+  .accor-item {
+    border: none;
+  }
+  span {
+    background-color: #efeadf;
+    padding: 14px 8px;
+  }
+
+
+  .footParag {
+    background-color: #efeadf;
+    padding: 15px 10px;
+    font-size: 17px;
+    color: #6d4f4f;
+  }
+  .input {
+    position: relative;
+    background-color: #efeadf;
+    padding: 14px 10px;
+    width: 100%;
+    .footerInput {
+      padding: 7px 38px;
+      font-size: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 7px;
+      color: #6d4f4f;
+    }
+    .inputMessage {
+      position: absolute;
+      bottom: 23px;
+      left: 25px;
+      font-size: 14px;
+    }
+    .inputNav {
+      position: absolute;
+      bottom: 21px;
+      right: 20px;
+      font-size: 18px;
+    }
+  }
+  .css-b0qdn7 {
+    padding-bottom: 0;
+  }
+
+  ul {
+    padding: 15px 7px;
+    background-color: #efeadf;
+    list-style: none;
+    li {
+      background-color: #efeadf;
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        background-color: transparent;
+        color: #6d4f4f;
+        font-size: 14px;
+        &:hover {
+          color: #676767;
+        }
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #e34875;
+          transition: width 0.3s;
+        }
+
+        &:hover::after {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  //   Footer down
+
+  .footer-down {
+    background-color: #efeadf;
+    color: #6d4f4f;
+    padding-top: 40px;
+    text-align: center;
+
+    .footer-txt {
+      background-color: transparent;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+    .icons {
+      background-color: transparent;
+      padding-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 35px;
+      a {
+        text-decoration: none;
+        background-color: transparent;
+        .social-media {
+          background-color: transparent;
+          font-size: 17px;
+          color: #6d4f4f;
+        }
+      }
+      img {
+        background-color: transparent;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 765px) {
+  #accordion {
+    display: none;
+  }
+}
