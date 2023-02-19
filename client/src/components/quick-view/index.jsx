@@ -15,7 +15,6 @@ import "./styles.scss";
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-import cak from "../../images/cake_collection_2.webp"
 
 const ModalViewCarousel = () => {
   const [product, setProduct] = useState([]);
@@ -43,9 +42,6 @@ const ModalViewCarousel = () => {
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <img src={cak} alt="" />
-          </SwiperSlide>
           <SwiperSlide>
             <img src={product.image2} alt="" />
           </SwiperSlide>

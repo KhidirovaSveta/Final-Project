@@ -15,7 +15,6 @@ import {
   productsAction,
   wishlistAction,
 } from "../../redux/action/products.action";
-// import "swiper/css/navigation";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
 
@@ -82,8 +81,6 @@ const Carousel = () => {
           slidesPerView={4}
           spaceBetween={20}
           loop={"true"}
-          navigation={true}
-          modules={[Navigation]}
           className="mySwiper"
           breakpoints={{
             250: {
@@ -131,7 +128,7 @@ const Carousel = () => {
                     )}
 
                     <br />
-                    <Button onClick={onOpen} className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
+                    <Button onClick={onOpen} id={`${product._id}`} className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
                     
                     <button
                       className="quick-add-btn"
