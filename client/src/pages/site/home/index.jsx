@@ -5,8 +5,8 @@ import Cake from "../../../images/cake_image_card.webp";
 import Cake2 from "../../../images/cake_image_card2.webp";
 
 import cakeBox from "../../../images/cake_box_1.avif";
-import cakeBox2 from "../../../images/cake_box_1.avif";
-import cakeBox3 from "../../../images/cake_box_1.avif";
+import cakeBox2 from "../../../images/cake_box_2.avif";
+import cakeBox3 from "../../../images/cake_box_3.avif";
 
 import Button from "../../../components/button";
 import cakeCollaction from "../../../images/cake_collection_1.webp";

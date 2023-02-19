@@ -1,10 +1,10 @@
 #Home {
-
   .second-section {
     .second-section-header {
       text-align: center;
       color: #6d4f4f;
       font-size: 45px;
+      font-weight: 700;
       margin-top: 70px;
       margin-bottom: 40px;
     }
@@ -21,7 +21,9 @@
       .third-sixth-section-text {
         width: 35%;
         .third-sixth-section-header {
-          font-size: 45px;
+          font-size: 40px;
+          line-height: 45px;
+          font-weight: 700;
           color: #6d4f4f;
           width: 75%;
         }
@@ -30,7 +32,8 @@
           color: #6d4f4f;
           font-size: 17px;
           line-height: 25px;
-          width: 90%;
+          width: 100%;
+          margin-bottom: 30px;
         }
       }
     }
@@ -77,6 +80,7 @@
       text-align: center;
       background-color: transparent;
       font-size: 45px;
+      font-weight: 700;
       margin-bottom: 40px;
     }
     .container {
@@ -117,7 +121,8 @@
     .fifth-section {
       color: #6d4f4f;
       .fifth-header {
-        font-size: 50px;
+        font-size: 47px;
+        font-weight: 700;
         text-align: center;
       }
       .fifth-box {
@@ -126,10 +131,14 @@
         text-align: center;
 
         .sweeties-card {
+          width: 450px;
           img {
-            margin-bottom: 10px;
+            margin: 0 auto;
+            margin-bottom: 12px;
           }
           .fifth-card-header {
+            font-size: 22px;
+            font-weight: 600;
             margin-bottom: 10px;
           }
           .fifth-card-parag {

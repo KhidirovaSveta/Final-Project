@@ -15,7 +15,7 @@ import "./index.scss";
 const HeaderTab = () => {
   return (
     <div>
-      <Tabs defaultIndex={1} className="headerTab">
+      <Tabs defaultIndex={0} className="headerTab">
         <TabPanels className="tabImg">
           <TabPanel>
             <Image boxSize="100%" fit="cover" src={Cake1} />

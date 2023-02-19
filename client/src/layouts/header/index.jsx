@@ -72,9 +72,9 @@ const Header = () => {
           </ul>
 
           <div className="action-icons">
-            <NavLink to={"/login"}> <CiUser className="action-icon"/> </NavLink>
+            <NavLink to={"/login"}> <CiUser className="action-icon d-non"/> </NavLink>
 
-            <NavLink to={"/wishlist"}> <CiStar className="action-icon"/> </NavLink>
+            <NavLink to={"/wishlist"}> <CiStar className="action-icon  d-non"/> </NavLink>
 
             <NavLink to={"/card"}> <IoBagOutline className="action-icon"/> </NavLink>
 

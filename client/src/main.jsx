@@ -7,15 +7,19 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import App from './App'
 import './index.css'
+import { ChakraProvider } from '@chakra-ui/react'
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+    <ChakraProvider>
     <Provider store={store}>
     <App />
     </Provider>
+    </ChakraProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
