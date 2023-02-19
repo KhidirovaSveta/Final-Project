@@ -18,13 +18,28 @@ import {
 // import "swiper/css/navigation";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
-// import ModalView from "../quick-view";
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button
+} from '@chakra-ui/react'
+import ModalViewCarousel from "../quick-view";
+
 
 const Carousel = () => {
   const productCard = useSelector((state) => state.productsReducer);
   const wishlist = useSelector((state) => state.wishlistReducer);
   const card = useSelector((state) => state.cardReducer);
   const dispatch = useDispatch();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
 
   const getData = () => {
     dispatch(productsAction());
@@ -34,9 +49,9 @@ const Carousel = () => {
     getData();
   }, []);
 
-    const handleCard = (obj) => {
-     dispatch(cardAction(obj));
-   };
+  const handleCard = (obj) => {
+    dispatch(cardAction(obj));
+  };
 
   // const handleWishList = (obj) => {
   //   dispatch(wishlistBasketAction(obj));
@@ -47,6 +62,21 @@ const Carousel = () => {
 
   return (
     <div>
+
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <ModalViewCarousel/>
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
       <div className="container">
         <Swiper
           slidesPerView={4}
@@ -86,9 +116,7 @@ const Carousel = () => {
 
                     {wishlist.find((e) => e._id === product._id) ? (
                       <div
-                        onClick={() =>
-                          dispatch(delwishlistAction(product._id))
-                        }
+                        onClick={() => dispatch(delwishlistAction(product._id))}
                         className="icon"
                       >
                         <CiStar className="wishlist action-icon  wishlist-added" />
@@ -103,13 +131,19 @@ const Carousel = () => {
                     )}
 
                     <br />
-                    <FaRegEye className="view action-icon" />
-                    <button className="quick-add-btn" onClick={() => handleCard(product)}> QUICK ADD</button>
+                    <Button onClick={onOpen} className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
+                    
+                    <button
+                      className="quick-add-btn"
+                      onClick={() => handleCard(product)}
+                    >
+                      {" "}
+                      QUICK ADD
+                    </button>
                   </div>
                   <div className="product-info">
                     <p className="productName">{product.name}</p>
                     <span className="price">${product.price}.00</span>
-                    {/* <ModalView/> */}
                   </div>
                 </div>
               </SwiperSlide>

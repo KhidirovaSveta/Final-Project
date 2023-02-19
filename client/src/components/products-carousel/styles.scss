@@ -8,9 +8,9 @@ body {
 }
 
 body {
-  font-size: 14px;
   margin: 0;
   padding: 0;
+  background-color: #fffbf3;
 }
 
 .swiper {
@@ -21,7 +21,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #fffbf3;
 
   /* Center slide text vertically */
   display: flex;
@@ -72,9 +72,12 @@ body {
         background-color: #000;
         color: #fff;
       }
+      .chakraBtn{
+        visibility: hidden;
+      }
       .view{
         position: relative;
-        left: 250px;
+        left: 230px;
         bottom: 295px;
 
       }
@@ -145,7 +148,8 @@ body {
     .product-info {
       color: #6d4f4f;
       .productName {
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 16px;
         margin-bottom: 10px;
       }
     }

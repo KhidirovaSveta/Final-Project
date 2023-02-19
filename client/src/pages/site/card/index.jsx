@@ -15,7 +15,7 @@ const Card = () => {
   };
 
   return (
-    <div className="card">
+    <div id="Card">
       <div className="cardHeader">
         <h1 className="shopCard">Shopping Cart</h1>
         <div className="navlink">
