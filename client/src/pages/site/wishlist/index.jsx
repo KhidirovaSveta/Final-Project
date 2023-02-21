@@ -39,6 +39,7 @@ const Wishlist = () => {
               <div className="wish-card">
                 <Link to={`/details/${product._id}`}>
                   <img src={product.image1} alt="" className="wishImg" />
+                      </Link>
                   <div className="wish-info">
                     <div className="w-i">
                       <h3> {product.name}</h3>
@@ -51,7 +52,6 @@ const Wishlist = () => {
                     </div>
                       <p>${product.price}.00</p>
                   </div>
-                </Link>
                 <button
                   className="add-to-cardBtn"
                   onClick={() => handleCard(product)}

@@ -52,6 +52,9 @@ const Carousel = () => {
     dispatch(cardAction(obj));
   };
 
+  const findId = (obj) => {
+    console.log(obj);
+  }
   // const handleWishList = (obj) => {
   //   dispatch(wishlistBasketAction(obj));
   // };
@@ -128,7 +131,12 @@ const Carousel = () => {
                     )}
 
                     <br />
-                    <Button onClick={onOpen} id={`${product._id}`} className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
+                    <Button onClick={()=> {
+                      return(
+                        onOpen(),
+                        findId(product)
+                      )
+                    }}  className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
                     
                     <button
                       className="quick-add-btn"
