@@ -1,10 +1,10 @@
 import * as Yup from "yup";
 
 const RegisterSchema = Yup.object().shape({
-  fullName: Yup.string()
+  firstName: Yup.string()
     .min(4, "Too Short!")
     .max(70, "Too Long!")
-    .required("Full Name is required."),
+    .required("First Name is required."),
   lastName: Yup.string()
     .min(4, "Too Short!")
     .max(70, "Too Long!")
