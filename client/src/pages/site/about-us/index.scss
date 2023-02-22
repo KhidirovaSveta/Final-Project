@@ -1,5 +1,6 @@
 #AboutUs {
-  margin: 50px 0;
+  background-color: #fffbf3;
+  padding: 50px 0;
   .aboutHeader {
     text-align: center;
     color: #6d4f4f;
@@ -30,19 +31,18 @@
     justify-content: center;
     align-items: center;
     column-gap: 25px;
-    .css-b0qdn7{
+    .css-b0qdn7 {
       padding: 15px 10px;
     }
-    .cookieimg{
+    .cookieimg {
       width: 45%;
       border-radius: 15px;
     }
     .accordion-side {
-      span{
+      span {
         padding: 17px 12px;
       }
       width: 40%;
-      
     }
   }
 }
