@@ -2,6 +2,7 @@ let initialState = {
     loading: true,
     data: undefined,
     error: undefined,
+    products: []
   };
   
   export default function productsReducer(state = initialState, action) {

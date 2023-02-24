@@ -28,13 +28,14 @@
       .login-container {
         display: flex;
         justify-content: center;
-        column-gap: 50px;
+        column-gap: 65px;
         padding-bottom: 70px;
         .login {
           width: 22%;
           .loginTxt {
             font-size: 25px;
-            margin-bottom: 19px;
+            margin-bottom: 18px;
+            font-weight: 700;
           }
           .loginInput {
             padding: 12px 10px;
@@ -45,7 +46,7 @@
             width: 100%;
             background-color: transparent;
           }
-          .red-txt{
+          .red-txt {
             color: rgb(190, 0, 0);
           }
           a {
@@ -70,11 +71,13 @@
           }
         }
         .newCus {
-          width: 22%;
+          width: 23%;
           .newCusHeader {
             font-size: 25px;
             margin-bottom: 19px;
+            font-weight: 700;
           }
+
           .newCusParag {
             font-size: 17px;
             line-height: 25px;

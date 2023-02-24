@@ -88,7 +88,7 @@
     .container {
       .sum-shop {
         display: flex;
-        justify-content: space-between;
+        column-gap: 20px;
         flex-wrap: wrap;
         background-color: #efeadf;
         .shop-card {
@@ -125,6 +125,9 @@
       .fifth-header {
         font-size: 47px;
         font-weight: 700;
+        text-align: center;
+      }
+      .sum-shop{
         text-align: center;
       }
       .fifth-box {

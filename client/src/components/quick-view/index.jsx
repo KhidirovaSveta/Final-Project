@@ -15,7 +15,6 @@ import "./styles.scss";
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-
 const ModalViewCarousel = () => {
   const [product, setProduct] = useState([]);
   const { _id } = useParams();
@@ -23,16 +22,18 @@ const ModalViewCarousel = () => {
   const getData = async () => {
     let response = await axios.get(`http://localhost:8080/sweeties/${_id}`);
     setProduct(response.data);
+    console.log(product);
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-
   return (
     <div>
-      <>
+     <img src={product.image1} alt="" />
+     
+      {/* <>
         <Swiper
           cssMode={true}
           navigation={true}
@@ -49,7 +50,7 @@ const ModalViewCarousel = () => {
             <img src={product.image3} alt="" />
           </SwiperSlide>
         </Swiper>
-      </>
+      </> */}
     </div>
   );
 };

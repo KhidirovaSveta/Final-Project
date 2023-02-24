@@ -23,24 +23,78 @@
     }
     .detail {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      column-gap: 25px;
+      padding-bottom: 50px;
       .details-img {
-          width: 55%;
-          display: block;
-          img{
-            padding: 0 2px;
+        display: flex;
+        img {
+          padding: 0 2px;
+        }
+        .rest-img {
+          img {
+            padding-bottom: 10px;
+            padding-right: 10px;
           }
+        }
       }
-      .details-info{
+      .details-info {
         color: #6d4f4f;
-        .detailsHeader{
-            font-size: 32px;
+        width: 50%;
+        .detail-title {
+          display: flex;
+          justify-content: space-between;
+          .detailsHeader {
+            font-size: 34px;
+            font-weight: 700;
             margin-bottom: 15px;
+          }
+          .action-icon {
+            background-color: #fff;
+            border-radius: 50%;
+            font-size: 45px;
+            padding: 11px 11px;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #5c5c5c51;
+            margin-right: 40%;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          .wishlist-added {
+            background-color: #000;
+            color: #fff;
+          }
         }
-        .price{
-            font-size: 25px;
+        .price {
+          font-size: 25px;
         }
       }
+    }
+
+    // Info section
+    .chakra-tabs__tablist,
+    .css-1xhq01z {
+      // margin: 0 40%;
+      border-bottom: 1px solid #6d4f4f5b;
+    }
+    .tabsHeaders {
+      display: flex;
+      margin: 0 auto;
+      column-gap: 20px;
+      .tabHeader {
+        font-size: 19px;
+        color: #6d4f4fc1;
+        &:focus {
+          color: #574141;
+        }
+      }
+    }
+    .tabtxt {
+      color: #6d4f4f;
+      padding: 50px 0;
     }
   }
 }

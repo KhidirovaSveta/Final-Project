@@ -4,10 +4,34 @@ import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import "./index.scss";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { CiStar } from "react-icons/ci";
+import {
+  cardAction,
+  delwishlistAction,
+  productsAction,
+  wishlistAction,
+} from "../../../redux/action/products.action";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
   const { _id } = useParams();
+
+  const wishlist = useSelector((state) => state.wishlistReducer);
+  const dispatch = useDispatch();
+
+  const data = () => {
+    dispatch(productsAction());
+  };
+
+  useEffect(() => {
+    data();
+  }, []);
+
+  const handleCard = (obj) => {
+    dispatch(cardAction(obj));
+  };
 
   const getData = async () => {
     let response = await axios.get(`http://localhost:8080/sweeties/${_id}`);
@@ -30,16 +54,60 @@ const Details = () => {
         </div>
         <div className="detail">
           <div className="details-img">
-            <img src={product.image1} alt="" width={"320px"} />
-            <img src={product.image2} alt="" width={"320px"} />
-            <img src={product.image3} alt="" width={"320px"} />
-            <img src={product.image4} alt="" width={"320px"} />
+            <div className="rest-img">
+              <img src={product.image1} alt="" width={"100px"} />
+              <img src={product.image2} alt="" width={"100px"} />
+              <img src={product.image3} alt="" width={"100px"} />
+              <img src={product.image4} alt="" width={"100px"} />
+            </div>
+            <img src={product.image1} alt="" width={"550px"} />
           </div>
           <div className="details-info">
-            <h1 className="detailsHeader">{product.name}</h1>
+            <div className="detail-title">
+              <h1 className="detailsHeader">{product.name}</h1>
+              {wishlist.find((e) => e._id === product._id) ? (
+                <div
+                  onClick={() => dispatch(delwishlistAction(product._id))}
+                  className="icon"
+                >
+                  <CiStar className="wishlist action-icon  wishlist-added" />
+                </div>
+              ) : (
+                <div
+                  onClick={() => dispatch(wishlistAction(product))}
+                  className="icon"
+                >
+                  <CiStar className="wishlist action-icon" />
+                </div>
+              )}
+            </div>
             <p className="price">${product.price}.00</p>
           </div>
         </div>
+
+        {/* Info section */}
+
+        <Tabs>
+          <TabList>
+            <div className="tabsHeaders">
+              <Tab className="tabHeader">Product description</Tab>
+              <Tab className="tabHeader">Shipping & Return</Tab>
+              <Tab className="tabHeader">Product reviews</Tab>
+            </div>
+          </TabList>
+          <TabPanels>
+            <TabPanel className="tabtxt">{product.description}</TabPanel>
+            <TabPanel className="tabtxt">
+              Shipping cost is based on weight. Just add products to your cart
+              and use the Shipping Calculator to see the shipping price. We want
+              you to be 100% satisfied with your purchase. Items can be returned
+              or exchanged within 30 days of delivery.
+            </TabPanel>
+            <TabPanel className="tabtxt">
+              <h1>Customer Reviews</h1>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </div>
     </div>
   );
