@@ -2,24 +2,22 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import {
-  cardAction,
-  delwishlistAction,
-} from "../../../redux/action/products.action";
 import { IoTrashOutline } from "react-icons/io5";
 import { FiChevronRight } from "react-icons/fi";
+import { addData, deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 
 const Wishlist = () => {
-  const wishlist = useSelector((state) => state.wishlistReducer);
+
   const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlistReducer);
 
-  const handleDelete = (e) => {
-    dispatch(delwishlistAction(e));
+  const handleDelete = () => {
+    dispatch(deleteData());
   };
 
-  const handleCard = (obj) => {
-    dispatch(cardAction(obj));
-  };
+  // const handleCard = (obj) => {
+  //   dispatch(cardAction(obj));
+  // };
 
   return (
     <div className="wishList">
@@ -34,24 +32,24 @@ const Wishlist = () => {
 
       <div className="container">
         <div className="wish-cards">
-          {wishlist?.map((product) => {
+          {wishlist?.data?.map((product) => {
             return (
               <div className="wish-card">
                 <Link to={`/details/${product._id}`}>
                   <img src={product.image1} alt="" className="wishImg" />
-                      </Link>
-                  <div className="wish-info">
-                    <div className="w-i">
-                      <h3> {product.name}</h3>
-                      <button
-                        className="delBtn"
-                        onClick={() => handleDelete(product)}
-                      >
-                        <IoTrashOutline />
-                      </button>
-                    </div>
-                      <p>${product.price}.00</p>
+                </Link>
+                <div className="wish-info">
+                  <div className="w-i">
+                    <h3> {product.name}</h3>
+                    <button
+                      className="delBtn"
+                      onClick={() => handleDelete(product)}
+                    >
+                      <IoTrashOutline />
+                    </button>
                   </div>
+                  <p>${product.price}.00</p>
+                </div>
                 <button
                   className="add-to-cardBtn"
                   onClick={() => handleCard(product)}

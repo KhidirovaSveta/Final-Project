@@ -7,12 +7,13 @@ import "./index.scss";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { CiStar } from "react-icons/ci";
-import {
-  cardAction,
-  delwishlistAction,
-  productsAction,
-  wishlistAction,
-} from "../../../redux/action/products.action";
+// import {
+//   cardAction,
+//   delwishlistAction,
+//   productsAction,
+//   wishlistAction,
+// } from "../../../redux/action/products.action";
+import { addData, deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
@@ -21,17 +22,17 @@ const Details = () => {
   const wishlist = useSelector((state) => state.wishlistReducer);
   const dispatch = useDispatch();
 
-  const data = () => {
-    dispatch(productsAction());
-  };
+  // const data = () => {
+  //   dispatch(getData());
+  // };
 
-  useEffect(() => {
-    data();
-  }, []);
+  // useEffect(() => {
+  //   data();
+  // }, []);
 
-  const handleCard = (obj) => {
-    dispatch(cardAction(obj));
-  };
+  // const handleCard = (obj) => {
+  //   dispatch(cardAction(obj));
+  // };
 
   const getData = async () => {
     let response = await axios.get(`http://localhost:8080/sweeties/${_id}`);
@@ -65,17 +66,16 @@ const Details = () => {
           <div className="details-info">
             <div className="detail-title">
               <h1 className="detailsHeader">{product.name}</h1>
-              {wishlist.find((e) => e._id === product._id) ? (
+
+              {wishlist.data.find((e) => e._id === product._id) ? (
                 <div
-                  onClick={() => dispatch(delwishlistAction(product._id))}
-                  className="icon"
+                  onClick={() => dispatch(deleteData(product._id))}
                 >
                   <CiStar className="wishlist action-icon  wishlist-added" />
                 </div>
               ) : (
                 <div
-                  onClick={() => dispatch(wishlistAction(product))}
-                  className="icon"
+                  onClick={() => dispatch(addData(product))}
                 >
                   <CiStar className="wishlist action-icon" />
                 </div>

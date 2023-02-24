@@ -8,9 +8,10 @@ import thunk from "redux-thunk";
 import App from './App'
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import { store } from "./redux-toolkit/store";
 
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+// const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

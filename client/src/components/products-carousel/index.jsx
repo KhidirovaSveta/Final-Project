@@ -9,12 +9,12 @@ import "./styles.scss";
 import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  cardAction,
-  delwishlistAction,
-  productsAction,
-  wishlistAction,
-} from "../../redux/action/products.action";
+// import {
+//   cardAction,
+//   delwishlistAction,
+//   productsAction,
+//   wishlistAction,
+// } from "../../redux/action/products.action";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
 
@@ -30,27 +30,34 @@ import {
   Button
 } from '@chakra-ui/react'
 import ModalViewCarousel from "../quick-view";
+import { getData } from "../../redux-toolkit/slice/dataSlice";
+import { addData, deleteData } from "../../redux-toolkit/slice/wishlistSlice";
 
 
 const Carousel = () => {
-  const productCard = useSelector((state) => state.productsReducer);
-  const wishlist = useSelector((state) => state.wishlistReducer);
-  const card = useSelector((state) => state.cardReducer);
+  // const productCard = useSelector((state) => state.productsReducer);
+  // const wishlist = useSelector((state) => state.wishlistReducer);
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.getDataReducer);
+  const wishlist = useSelector((state) => state.wishlistReducer);
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-
-  const getData = () => {
-    dispatch(productsAction());
-  };
-
   useEffect(() => {
-    getData();
+    dispatch(getData());
   }, []);
 
-  const handleCard = (obj) => {
-    dispatch(cardAction(obj));
-  };
+
+  // const getData = () => {
+  //   dispatch(productsAction());
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  // const handleCard = (obj) => {
+  //   dispatch(cardAction(obj));
+  // };
 
   const findId = (obj) => {
     console.log(obj);
@@ -104,7 +111,7 @@ const Carousel = () => {
             },
           }}
         >
-          {productCard?.data?.map((product) => {
+          {products?.data?.map((product) => {
             return (
               <SwiperSlide key={product._id}>
                 <div className="cards">
@@ -114,7 +121,22 @@ const Carousel = () => {
                       <img src={product.image2} alt="" className="img-top" />
                     </Link>
 
-                    {wishlist.find((e) => e._id === product._id) ? (
+                    {wishlist.data.find((e) => e._id === product._id) ? (
+                    <div
+                      onClick={() => dispatch(deleteData(product._id))}
+                      className="icon"
+                    >
+                     <CiStar className="wishlist action-icon  wishlist-added" />
+                    </div>
+                  ) : (
+                    <div
+                      onClick={() => dispatch(addData(product))}
+                      className="icon"
+                    >
+                         <CiStar className="wishlist action-icon" />
+                    </div>
+                  )}
+                    {/* {wishlist.find((e) => e._id === product._id) ? (
                       <div
                         onClick={() => dispatch(delwishlistAction(product._id))}
                         className="icon"
@@ -128,7 +150,7 @@ const Carousel = () => {
                       >
                         <CiStar className="wishlist action-icon" />
                       </div>
-                    )}
+                    )} */}
 
                     <br />
                     <Button onClick={()=> {
