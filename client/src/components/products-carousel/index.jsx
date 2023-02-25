@@ -18,73 +18,96 @@ import { useDispatch, useSelector } from "react-redux";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
 
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  Button
-} from '@chakra-ui/react'
-import ModalViewCarousel from "../quick-view";
+// import {
+//   Modal,
+//   ModalOverlay,
+//   ModalContent,
+//   ModalHeader,
+//   ModalFooter,
+//   ModalBody,
+//   ModalCloseButton,
+//   useDisclosure,
+//   Button,
+// } from "@chakra-ui/react";
+
+// import ModalViewCarousel from "../quick-view";
 import { getData } from "../../redux-toolkit/slice/dataSlice";
 import { addData, deleteData } from "../../redux-toolkit/slice/wishlistSlice";
 import { addToCart } from "../../redux-toolkit/slice/cartSlice";
-
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
+import ModalCart from "../modalCart";
 
 const Carousel = () => {
-  // const productCard = useSelector((state) => state.productsReducer);
-  // const wishlist = useSelector((state) => state.wishlistReducer);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.getDataReducer);
   const wishlist = useSelector((state) => state.wishlistReducer);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
 
   useEffect(() => {
     dispatch(getData());
   }, []);
 
-
-  // const getData = () => {
-  //   dispatch(productsAction());
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  // const handleCard = (obj) => {
-  //   dispatch(cardAction(obj));
-  // };
-
   const findId = (obj) => {
     console.log(obj);
-  }
+  };
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
 
-
   return (
     <div>
-
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+      {/* <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <ModalViewCarousel/>
+            <ModalViewCarousel />
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>
-      </Modal>
+      </Modal> */}
+
+      <>
+        
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Shopping Cart</DrawerHeader>
+
+            <DrawerBody>
+              <ModalCart/>
+            </DrawerBody>
+
+            <DrawerFooter>
+              <Button variant="outline" mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme="blue">Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </>
 
       <div className="container">
         <Swiper
@@ -122,20 +145,20 @@ const Carousel = () => {
                     </Link>
 
                     {wishlist.data.find((e) => e._id === product._id) ? (
-                    <div
-                      onClick={() => dispatch(deleteData(product._id))}
-                      className="icon"
-                    >
-                     <CiStar className="wishlist action-icon  wishlist-added" />
-                    </div>
-                  ) : (
-                    <div
-                      onClick={() => dispatch(addData(product))}
-                      className="icon"
-                    >
-                         <CiStar className="wishlist action-icon" />
-                    </div>
-                  )}
+                      <div
+                        onClick={() => dispatch(deleteData(product._id))}
+                        className="icon"
+                      >
+                        <CiStar className="wishlist action-icon  wishlist-added" />
+                      </div>
+                    ) : (
+                      <div
+                        onClick={() => dispatch(addData(product))}
+                        className="icon"
+                      >
+                        <CiStar className="wishlist action-icon" />
+                      </div>
+                    )}
                     {/* {wishlist.find((e) => e._id === product._id) ? (
                       <div
                         onClick={() => dispatch(delwishlistAction(product._id))}
@@ -153,20 +176,34 @@ const Carousel = () => {
                     )} */}
 
                     <br />
-                    <Button onClick={()=> {
-                      return(
-                        onOpen(),
-                        findId(product)
-                      )
-                    }}  className="chakraBtn"><FaRegEye className="view action-icon" /></Button>
-                    
-                    <button
+                    <Button
+                      onClick={() => {
+                        return onOpen(), findId(product);
+                      }}
+                      className="chakraBtn"
+                    >
+                      <FaRegEye className="view action-icon" />
+                    </Button>
+
+                    <Button
                       className="quick-add-btn"
-                      onClick={() => handleAddToCart(product)}
+                      onClick={() => {
+                        onOpen(), handleAddToCart(product);
+                      }}
+                    >
+                      QUICK ADD
+                    </Button>
+
+                    {/* <button
+                      className="quick-add-btn"
+                      onClick={() => {
+                        onClick = { onOpen };
+                        handleAddToCart(product);
+                      }}
                     >
                       {" "}
                       QUICK ADD
-                    </button>
+                    </button> */}
                   </div>
                   <div className="product-info">
                     <p className="productName">{product.name}</p>

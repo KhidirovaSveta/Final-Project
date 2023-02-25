@@ -106,12 +106,11 @@ const AboutUs = () => {
       </div>
 
       <img src={FunImg} alt="" className="middleImg" />
-
       <div className="community-section">
         <h2 className="ourCommunity">Our Community</h2>
         <p className="followUs">
-          Follow us on Instagram <span className="ig">@Sweeties</span> & tag us in your pics to get
-          featured!
+          Follow us on Instagram <span className="ig">@Sweeties</span> & tag us
+          in your pics to get featured!
         </p>
         <AboutCarousel />
       </div>

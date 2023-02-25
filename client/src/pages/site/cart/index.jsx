@@ -13,7 +13,7 @@ import {
   removeFromCart,
 } from "../../../redux-toolkit/slice/cartSlice";
 
-const Cart = () => {
+const CartProducts = () => {
   const cart = useSelector((state) => state.cartSliceReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -125,4 +125,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartProducts;
