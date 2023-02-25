@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: [],
+  data: localStorage.getItem("data")
+  ? JSON.parse(localStorage.getItem("data"))
+  : [],
 };
 
 export const wishlistSlice = createSlice({
@@ -10,9 +12,12 @@ export const wishlistSlice = createSlice({
   reducers: {
     addData: (state, action) => {
       state.data.push(action.payload);
+      localStorage.setItem("data", JSON.stringify(state.data));
     },
     deleteData: (state, action) => {
       state.data = state.data.filter((e) => e._id !== action.payload);
+      localStorage.setItem("data", JSON.stringify(state.data));
+      return state;
     },
   },
 });

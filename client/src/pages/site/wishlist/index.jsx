@@ -5,17 +5,20 @@ import { Link } from "react-router-dom";
 import { IoTrashOutline } from "react-icons/io5";
 import { FiChevronRight } from "react-icons/fi";
 import { deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
+import { addToCart } from "../../../redux-toolkit/slice/cartSlice";
 
 const Wishlist = () => {
 
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlistReducer);
 
-  const handleDelete = () => {
-    dispatch(deleteData());
+  const handleDelete = (product) => {
+    dispatch(deleteData(product));
   };
 
-
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   // const handleCard = (obj) => {
   //   dispatch(cardAction(obj));
@@ -54,7 +57,7 @@ const Wishlist = () => {
                 </div>
                 <button
                   className="add-to-cardBtn"
-                  onClick={() => handleCard(product)}
+                  onClick={() => handleAddToCart(product)}
                 >
                   {" "}
                   Add to Card{" "}
