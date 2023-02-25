@@ -142,7 +142,7 @@ const Home = () => {
                 you in temperature controlled packaging, so they’re cold and
                 ready to eat.You don’t ehave to get out of the pool
               </p>
-              <Button btnName={"LEARN MORE"} className="learnBtn" />
+             <Link to={"/about-us"}> <Button btnName={"LEARN MORE"} className="learnBtn" /> </Link> 
             </div>
             <br />
             <img src={Cake2} alt="" className="cakeImg" />

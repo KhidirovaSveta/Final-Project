@@ -12,6 +12,10 @@ import {
 } from "@chakra-ui/react";
 
 import Cookie from "../../../images/Cookie_about.webp";
+
+import FunImg from "../../../images/fun.webp";
+import PartyPacks from "../../../images/party_packs.webp";
+
 const AboutUs = () => {
   return (
     <div id="AboutUs">
@@ -25,7 +29,7 @@ const AboutUs = () => {
       </div>
       <div className="container">
         <div className="first-about-section">
-          <img src={Cookie} alt="Cookie"   className="cookieimg"/>
+          <img src={Cookie} alt="Cookie" className="cookieimg" />
           <div className="accordion-side">
             <Accordion>
               <AccordionItem>
@@ -69,7 +73,9 @@ const AboutUs = () => {
                 <h2>
                   <AccordionButton>
                     <Box as="span" flex="1" textAlign="left">
-                    I love Sweeties! Are these the cookies and Cake Truffles I know?                    </Box>
+                      I love Sweeties! Are these the cookies and Cake Truffles I
+                      know?
+                    </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
@@ -82,21 +88,37 @@ const AboutUs = () => {
                 </AccordionPanel>
               </AccordionItem>
 
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
-                    Why is Sweeties coming to the grocery store?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-              Where can I get them?
-              </AccordionPanel>
-            </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" flex="1" textAlign="left">
+                      Why is Sweeties coming to the grocery store?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>Where can I get them?</AccordionPanel>
+              </AccordionItem>
             </Accordion>
           </div>
+        </div>
+      </div>
+
+      <img src={FunImg} alt=""  className="middleImg"/>
+
+      <div className="container">
+        <div className="second-about-section">
+          <div className="second-about-section-text">
+            <h2 className="second-about-section-header">The Perfect Gift</h2>
+            <p className="second-about-section-parag">
+              Know someone with a birthday, anniversary, or just a great reason
+              to celebrate? Send them an extra tasty surprise shipped straight
+              to their door. We’re talking iconic cakes, pies, cookies, cake
+              truffles, and more. Our treats ship with cold-packs and insulated
+              packaging so they arrive fresh and ready to devour.
+            </p>
+          </div>
+          <img src={PartyPacks} alt="" className="cakeImg" />
         </div>
       </div>
     </div>

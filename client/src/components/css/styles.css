@@ -1,0 +1,145 @@
+#app {
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fffbf3;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}/*# sourceMappingURL=styles.css.map */ width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next {
+  background-color: transparent;
+}
+
+.swiper-button-prev {
+  background-color: transparent;
+}
+
+.container .cards {
+  text-align: start;
+  display: inline-block;
+  position: relative;
+}
+.container .cards .images .action-btn {
+  border: none;
+}
+.container .cards .images .action-icon {
+  box-sizing: border-box;
+  visibility: hidden;
+  position: relative;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 41px;
+  padding: 11px 11px;
+  color: #000;
+  left: 250px;
+  bottom: 280px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.container .cards .images .action-icon:hover {
+  transform: scale(1.1);
+}
+.container .cards .images .wishlist-added {
+  background-color: #000;
+  color: #fff;
+}
+.container .cards .images .chakraBtn {
+  visibility: hidden;
+}
+.container .cards .images .view {
+  position: relative;
+  left: 234px;
+  bottom: 295px;
+}
+.container .cards .images .quick-add-btn {
+  box-sizing: border-box;
+  visibility: hidden;
+  position: relative;
+  background-color: #fff;
+  bottom: 175px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 0;
+  width: 85%;
+  margin-left: 8%;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.container .cards .images .quick-add-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+.container .cards .images:hover .img-top {
+  display: inline-block;
+  width: 100%;
+  height: 77%;
+  transition: all 0.9s;
+  transition-timing-function: ease;
+}
+.container .cards .images:hover .quick-add-btn {
+  visibility: visible;
+  z-index: 2;
+}
+.container .cards .images:hover .wishlist {
+  visibility: visible;
+  z-index: 5;
+}
+.container .cards .images:hover .view {
+  visibility: visible;
+  z-index: 5;
+}
+.container .cards .images .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.container .cards .images .img-top:hover {
+  opacity: 1;
+  transition-duration: 1s;
+}
+.container .cards .images {
+  margin-bottom: -135px;
+}
+.container .cards a {
+  text-decoration: none;
+}
+.container .cards .product-info {
+  color: #6d4f4f;
+}
+.container .cards .product-info .productName {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=styles.css.map */

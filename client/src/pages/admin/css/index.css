@@ -1,0 +1,111 @@
+#Register {
+  background-color: #fffbf3;
+}
+#Register .container .register-section {
+  padding-top: 40px;
+  color: #6d4f4f;
+}
+#Register .container .register-section .registerHeader {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+}
+#Register .container .register-section .navlink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 95px;
+}
+#Register .container .register-section .navlink a {
+  text-decoration: none;
+  color: #6d4f4f;
+}
+#Register .container .register-section .navlink .right {
+  opacity: 0.5;
+}
+#Register .container .register-section .register {
+  margin: 0 auto;
+  width: 370px;
+}
+#Register .container .register-section .register .registrHeader {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+#Register .container .register-section .register .registInputs {
+  margin-bottom: 7px;
+}
+#Register .container .register-section .register .registInputs .red-txt {
+  color: rgb(190, 0, 0);
+}
+#Register .container .register-section .register .registInputs .borderPink:focus {
+  border: 2px solid #e34875;
+}
+#Register .container .register-section .register .registInputs input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: 1px solid rgba(153, 153, 153, 0.4);
+  border-radius: 5px;
+}
+#Register .container .register-section .register .btn {
+  width: 100%;
+  padding: 14px 37px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#Register .container .register-section .register .btn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.03);
+}
+#Register .container .register-section .register .regBtn {
+  margin: 10px 0;
+  border: none;
+  background-color: #e34875;
+  color: #fff;
+}
+#Register .container .register-section .register .loginBtn {
+  background-color: transparent;
+  border: 1px solid #000;
+  margin-bottom: 55px;
+}
+#Register .container .register-section .register .signUpParag {
+  margin: 17px 0;
+}/*# sourceMappingURL=index.css.map */in-bottom: 15px;
+}
+@media only screen and (max-width: 992px) {
+  #LogIn .container .login-section .login-container {
+    padding: 10px 12px;
+  }
+  #LogIn .container .login-section .login-container .login {
+    width: 40%;
+  }
+  #LogIn .container .login-section .login-container .login .signinBtn {
+    margin-bottom: 50px;
+  }
+  #LogIn .container .login-section .login-container .newCus {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 765px) {
+  #LogIn .container .login-section .login-container {
+    display: block;
+    padding: 10px 12px;
+  }
+  #LogIn .container .login-section .login-container .login {
+    width: 100%;
+  }
+  #LogIn .container .login-section .login-container .login .signinBtn {
+    margin-bottom: 50px;
+  }
+  #LogIn .container .login-section .login-container .newCus {
+    width: 100%;
+  }
+}/*# sourceMappingURL=index.css.map */

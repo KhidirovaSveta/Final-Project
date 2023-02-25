@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../../images/cake_logo.avif";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./index.scss";
 import { IoBagOutline } from "react-icons/io5";
@@ -70,7 +70,10 @@ const Header = () => {
                 </li>
               </ul>
             )}
-            <img src={Logo} alt="" className="logo" />
+
+            <Link to={"/"}>
+              <img src={Logo} alt="" className="logo" />
+            </Link>
 
             <ul>
               <li>
