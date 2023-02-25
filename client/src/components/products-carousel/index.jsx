@@ -63,12 +63,6 @@ const Carousel = () => {
   const findId = (obj) => {
     console.log(obj);
   }
-  // const handleWishList = (obj) => {
-  //   dispatch(wishlistBasketAction(obj));
-  // };
-  // const handleDelete = (e) => {
-  //   dispatch(delwishlistBasketAction(e));
-  // };
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));

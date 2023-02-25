@@ -7,20 +7,41 @@ import "./index.scss";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { CiStar } from "react-icons/ci";
-// import {
-//   cardAction,
-//   delwishlistAction,
-//   productsAction,
-//   wishlistAction,
-// } from "../../../redux/action/products.action";
-import { addData, deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
+import {
+  addData,
+  deleteData,
+} from "../../../redux-toolkit/slice/wishlistSlice";
+import {
+  addToCart,
+  decreaseCart,
+  getTotals,
+} from "../../../redux-toolkit/slice/cartSlice";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
   const { _id } = useParams();
 
   const wishlist = useSelector((state) => state.wishlistReducer);
+  const cart = useSelector((state) => state.cartSliceReducer);
   const dispatch = useDispatch();
+
+  const getData = async () => {
+    let response = await axios.get(`http://localhost:8080/sweeties/${_id}`);
+    setProduct(response.data);
+  };
+
+  useEffect(() => {
+    getData();
+    dispatch(getTotals());
+  }, []);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const handleDecreaseCart = (product) => {
+    dispatch(decreaseCart(product));
+  };
 
   // const data = () => {
   //   dispatch(getData());
@@ -33,15 +54,6 @@ const Details = () => {
   // const handleCard = (obj) => {
   //   dispatch(cardAction(obj));
   // };
-
-  const getData = async () => {
-    let response = await axios.get(`http://localhost:8080/sweeties/${_id}`);
-    setProduct(response.data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <div id="Details">
@@ -68,22 +80,36 @@ const Details = () => {
               <h1 className="detailsHeader">{product.name}</h1>
 
               {wishlist.data.find((e) => e._id === product._id) ? (
-                <div
-                  onClick={() => dispatch(deleteData(product._id))}
-                >
+                <div onClick={() => dispatch(deleteData(product._id))}>
                   <CiStar className="wishlist action-icon  wishlist-added" />
                 </div>
               ) : (
-                <div
-                  onClick={() => dispatch(addData(product))}
-                >
+                <div onClick={() => dispatch(addData(product))}>
                   <CiStar className="wishlist action-icon" />
                 </div>
               )}
             </div>
             <p className="price">${product.price}.00</p>
+
+            <p className="quantityParag">Quantity</p>
+            <div className="add-to-cart">
+              <div className="cart-product-quantity">
+                <button onClick={() => handleDecreaseCart(product)}>-</button>
+                <div className="count">{product.cartQuantity}</div>
+                <button onClick={() => handleAddToCart(product)}>+</button>
+              </div>
+
+              <button
+                onClick={() => handleAddToCart(product)}
+                className="detailAddBtn"
+              >
+                {" "}
+                ADD TO CART{" "}
+              </button>
+            </div>
           </div>
         </div>
+
 
         {/* Info section */}
 

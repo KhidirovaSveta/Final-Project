@@ -71,6 +71,47 @@
         .price {
           font-size: 25px;
         }
+        .quantityParag{
+          margin-top: 20px;
+          font-weight: 600;
+        }
+        .add-to-cart{
+          margin-top: 15px;
+          display: flex;
+          justify-content: space-between;
+          column-gap: 18px;
+          .cart-product-quantity {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 130px;
+            max-width: 100%;
+            border: 0.5px solid rgb(177, 177, 177);
+            border-radius: 5px;
+            button {
+              border: none;
+              outline: none;
+              background: none;
+              padding: 10px 1.7rem;
+              cursor: pointer;
+            }
+          }
+          .detailAddBtn{
+            width: 100%;
+            padding: 12px 37px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid #000;
+            transition: all 0.4s;
+            &:hover {
+              background-color: #000;
+              color: #fff;
+              transform: scaleY(1.1);
+            }
+          }
+        }
       }
     }
 

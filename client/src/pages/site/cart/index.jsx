@@ -36,7 +36,6 @@ const Cart = () => {
     navigate("/");
   };
 
-
   return (
     <div id="Card">
       <div className="container">
@@ -73,12 +72,17 @@ const Cart = () => {
                       <img src={cartItem.image1} alt={cartItem.name} />
                       <div>
                         <h3 className="card-product-name">{cartItem.name}</h3>
-                        <button className="cartRemoveBtn" onClick={() => handleRemoveFromCart(cartItem)}>
+                        <button
+                          className="cartRemoveBtn"
+                          onClick={() => handleRemoveFromCart(cartItem)}
+                        >
                           Remove
                         </button>
                       </div>
                     </div>
-                    <div className="cart-product-price">${cartItem.price}.00</div>
+                    <div className="cart-product-price">
+                      ${cartItem.price}.00
+                    </div>
                     <div className="cart-product-quantity">
                       <button onClick={() => handleDecreaseCart(cartItem)}>
                         -
@@ -103,7 +107,9 @@ const Cart = () => {
                   <span>Subtotal</span>
                   <span className="amount">${cart.cartTotalAmount}</span>
                 </div>
-                <p className="sub-parag">Taxes and shipping calculated at checkout</p>
+                <p className="sub-parag">
+                  Taxes and shipping calculated at checkout
+                </p>
                 <button>Check out</button>
                 <div className="continue-shopping">
                   <Link to="/">

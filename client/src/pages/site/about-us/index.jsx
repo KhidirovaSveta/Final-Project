@@ -15,6 +15,7 @@ import Cookie from "../../../images/Cookie_about.webp";
 
 import FunImg from "../../../images/fun.webp";
 import PartyPacks from "../../../images/party_packs.webp";
+import AboutCarousel from "../../../components/about-carousel";
 
 const AboutUs = () => {
   return (
@@ -104,7 +105,16 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <img src={FunImg} alt=""  className="middleImg"/>
+      <img src={FunImg} alt="" className="middleImg" />
+
+      <div className="community-section">
+        <h2 className="ourCommunity">Our Community</h2>
+        <p className="followUs">
+          Follow us on Instagram <span className="ig">@Sweeties</span> & tag us in your pics to get
+          featured!
+        </p>
+        <AboutCarousel />
+      </div>
 
       <div className="container">
         <div className="second-about-section">

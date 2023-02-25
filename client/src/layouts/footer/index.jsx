@@ -66,11 +66,11 @@ const Footer = () => {
                   <NavLink to={"/"}> My account </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/"}> Cart </NavLink>
+                  <NavLink to={"/cart"}> Cart </NavLink>
                 </li>
                 <li>
                   {" "}
-                  <NavLink to={"/"}> Wishlist </NavLink>
+                  <NavLink to={"/wishlist"}> Wishlist </NavLink>
                 </li>
                 <li>
                   {" "}
