@@ -57,11 +57,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
         a {
           padding: 0 12px;
         }
-        .action-icon{
+        .action-icon {
           font-size: 22px;
+        }
+        .cartQuantity {
+          position: absolute;
+          font-size: 12px;
+          right: 0px;
+          color: #fff;
+          bottom: 12px;
+          background-color: #e34875;
+          border-radius: 50%;
+          padding: 1px 7px;
         }
       }
     }
@@ -74,7 +85,7 @@
           padding: 0 7px;
           font-size: 2rem;
         }
-        .logo{
+        .logo {
           margin-left: 42%;
           font-size: 17%;
         }
@@ -93,16 +104,16 @@
           li {
             padding: 10px 0;
             background-color: #fff;
-            a{
+            a {
               background-color: #fff;
             }
           }
         }
-  
+
         ul {
           display: none;
         }
-  
+
         .action-icons {
           .d-non {
             display: none;

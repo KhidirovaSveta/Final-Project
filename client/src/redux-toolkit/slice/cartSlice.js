@@ -62,7 +62,7 @@ const cartSlice = createSlice({
     },
     removeFromCart(state, action) {
       state.cartItems.map((cartItem) => {
-        if (cartItem.id === action.payload.id) {
+        if (cartItem._id === action.payload._id) {
           const nextCartItems = state.cartItems.filter(
             (item) => item._id !== cartItem._id
           );

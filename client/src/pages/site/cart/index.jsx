@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
-// import { deleteCardAction } from "../../../redux/action/products.action";
+import { useNavigate } from "react-router-dom";
+
 import {
   addToCart,
   clearCart,
@@ -15,6 +16,7 @@ import {
 const Cart = () => {
   const cart = useSelector((state) => state.cartSliceReducer);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getTotals());
@@ -31,11 +33,9 @@ const Cart = () => {
   };
   const handleClearCart = () => {
     dispatch(clearCart());
+    navigate("/");
   };
 
-  // const handleDelete = (e) => {
-  //   dispatch(deleteCardAction(e));
-  // };
 
   return (
     <div id="Card">
