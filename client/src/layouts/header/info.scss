@@ -3,12 +3,13 @@
   padding: 12px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   .infoBoxParag {
     background-color: transparent;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
+    margin-left: 35%;
   }
   .x-btn{
     background-color: transparent;
@@ -18,7 +19,7 @@
       background-color: transparent;
       font-size: 18px;
       color: #fff;
-      padding: 0 10px;
+      padding: 0 25px;
     }
   }
 }

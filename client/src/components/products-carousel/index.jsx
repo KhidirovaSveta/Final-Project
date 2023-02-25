@@ -9,12 +9,6 @@ import "./styles.scss";
 import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-// import {
-//   cardAction,
-//   delwishlistAction,
-//   productsAction,
-//   wishlistAction,
-// } from "../../redux/action/products.action";
 import { CiStar } from "react-icons/ci";
 import { FaRegEye } from "react-icons/fa";
 
@@ -31,6 +25,7 @@ import { FaRegEye } from "react-icons/fa";
 // } from "@chakra-ui/react";
 
 // import ModalViewCarousel from "../quick-view";
+
 import { getData } from "../../redux-toolkit/slice/dataSlice";
 import { addData, deleteData } from "../../redux-toolkit/slice/wishlistSlice";
 import { addToCart } from "../../redux-toolkit/slice/cartSlice";

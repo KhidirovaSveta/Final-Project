@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { IoTrashOutline } from "react-icons/io5";
+// import { IoTrashOutline } from "react-icons/io5";
 import { FiChevronRight } from "react-icons/fi";
 import { deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 import { addToCart } from "../../../redux-toolkit/slice/cartSlice";
+import { CiStar } from "react-icons/ci";
 
 const Wishlist = () => {
-
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlistReducer);
 
@@ -41,17 +41,33 @@ const Wishlist = () => {
             return (
               <div className="wish-card">
                 <Link to={`/details/${product._id}`}>
-                  <img src={product.image1} alt="" className="wishImg" />
+                  <img src={product.image2} alt="" className="wishImg" />
                 </Link>
                 <div className="wish-info">
                   <div className="w-i">
                     <h3> {product.name}</h3>
-                    <button
+                    {/* <button
                       className="delBtn"
                       onClick={() => handleDelete(product)}
                     >
                       <IoTrashOutline />
-                    </button>
+                    </button> */}
+
+                    {wishlist.data.find((e) => e._id === product._id) ? (
+                      <div
+                        onClick={() => dispatch(deleteData(product._id))}
+                        className="icon"
+                      >
+                        <CiStar className="wishlist action-icon  wishlist-added" />
+                      </div>
+                    ) : (
+                      <div
+                        onClick={() => dispatch(addData(product))}
+                        className="icon"
+                      >
+                        <CiStar className="wishlist action-icon" />
+                      </div>
+                    )}
                   </div>
                   <p>${product.price}.00</p>
                 </div>
