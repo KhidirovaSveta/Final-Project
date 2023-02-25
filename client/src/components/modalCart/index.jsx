@@ -73,20 +73,6 @@ const ModalCart = () => {
                   </div>
                 ))}
             </div>
-            <div className="cart-summary">
-              <div className="cart-checkout">
-                <div className="subtotal">
-                  <span>Subtotal</span>
-                  <span className="amount">${cart.cartTotalAmount}</span>
-                </div>
-                <button className="modalCheckBtn">Check out</button>
-                <div className="continue-shopping">
-                  <Link to="/cart">
-                    <span className="viewCart">View cart</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         )}
       </div>

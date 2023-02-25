@@ -46,6 +46,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import ModalCart from "../modalCart";
+import ModalCartFooter from "../modalCart/modalFooter";
 
 const Carousel = () => {
   const dispatch = useDispatch();
@@ -100,10 +101,7 @@ const Carousel = () => {
             </DrawerBody>
 
             <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme="blue">Save</Button>
+              <ModalCartFooter/>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
@@ -204,6 +202,7 @@ const Carousel = () => {
                       {" "}
                       QUICK ADD
                     </button> */}
+                    
                   </div>
                   <div className="product-info">
                     <p className="productName">{product.name}</p>
