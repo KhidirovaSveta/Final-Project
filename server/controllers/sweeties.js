@@ -24,6 +24,20 @@ export const getSweetiesById = async (req, res) => {
   }
 };
 
+// //get products by slug
+// export const  getSweetiesBySlug = async (req, res) => {
+//   const { slug } = req.params;
+//   try {
+//     const sweeties = await Sweeties.findOne({ slug: slug })
+//     .select("_id type ")
+//     res.status(200).json({sweeties});
+//   } catch (error) {
+//     res.status(500).json({
+//       message: error.message,
+//     });
+//   }
+// };
+
 //delete product by id
 export const deleteProduct = async (req, res) => {
   const { id } = req.params;
