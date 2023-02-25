@@ -12,7 +12,7 @@ export const wishlistSlice = createSlice({
       state.data.push(action.payload);
     },
     deleteData: (state, action) => {
-      state.data = state.data.filter((elem) => elem._id !== action.payload);
+      state.data = state.data.filter((e) => e._id !== action.payload);
     },
   },
 });

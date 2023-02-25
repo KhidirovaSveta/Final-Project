@@ -32,6 +32,7 @@ import {
 import ModalViewCarousel from "../quick-view";
 import { getData } from "../../redux-toolkit/slice/dataSlice";
 import { addData, deleteData } from "../../redux-toolkit/slice/wishlistSlice";
+import { addToCart } from "../../redux-toolkit/slice/cartSlice";
 
 
 const Carousel = () => {
@@ -68,6 +69,11 @@ const Carousel = () => {
   // const handleDelete = (e) => {
   //   dispatch(delwishlistBasketAction(e));
   // };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
 
   return (
     <div>
@@ -162,7 +168,7 @@ const Carousel = () => {
                     
                     <button
                       className="quick-add-btn"
-                      onClick={() => handleCard(product)}
+                      onClick={() => handleAddToCart(product)}
                     >
                       {" "}
                       QUICK ADD

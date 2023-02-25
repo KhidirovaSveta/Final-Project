@@ -76,7 +76,7 @@ const Header = () => {
 
             <NavLink to={"/wishlist"}> <CiStar className="action-icon  d-non"/> </NavLink>
 
-            <NavLink to={"/card"}> <IoBagOutline className="action-icon"/> </NavLink>
+            <NavLink to={"/cart"}> <IoBagOutline className="action-icon"/> </NavLink>
 
           </div>
            

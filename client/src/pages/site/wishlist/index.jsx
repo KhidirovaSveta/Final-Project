@@ -4,7 +4,7 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import { IoTrashOutline } from "react-icons/io5";
 import { FiChevronRight } from "react-icons/fi";
-import { addData, deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
+import { deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 
 const Wishlist = () => {
 
@@ -14,6 +14,8 @@ const Wishlist = () => {
   const handleDelete = () => {
     dispatch(deleteData());
   };
+
+
 
   // const handleCard = (obj) => {
   //   dispatch(cardAction(obj));
