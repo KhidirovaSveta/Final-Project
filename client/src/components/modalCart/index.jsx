@@ -54,20 +54,26 @@ const ModalCart = () => {
                           ${cartItem.price}.00
                         </div>
                         <div className="cart-product-quantity">
-                          <button onClick={() => handleDecreaseCart(cartItem)}>
+                          <button
+                            className="quantityBtn"
+                            onClick={() => handleDecreaseCart(cartItem)}
+                          >
                             -
                           </button>
                           <div className="count">{cartItem.cartQuantity}</div>
-                          <button onClick={() => handleAddToCart(cartItem)}>
+                          <button
+                            className="quantityBtn"
+                            onClick={() => handleAddToCart(cartItem)}
+                          >
                             +
                           </button>
-                        </div>
                         <button
                           className="cartRemoveBtn"
                           onClick={() => handleRemoveFromCart(cartItem)}
                         >
                           Remove
                         </button>
+                        </div>
                       </div>
                     </div>
                   </div>

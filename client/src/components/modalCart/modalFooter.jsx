@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTotals } from '../../redux-toolkit/slice/cartSlice';
 import { Link } from "react-router-dom";
 import "./modalCartFooter.scss"
+
 const ModalCartFooter = () => {
     const cart = useSelector((state) => state.cartSliceReducer);
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const ModalCartFooter = () => {
                   <div className="cart-checkout">
                     <div className="subtotal">
                       <span>Subtotal</span>
-                      <span className="amount">${cart.cartTotalAmount}</span>
+                      <span className="amount">${cart.cartTotalAmount}.00</span>
                     </div>
                     <button className="modalCheckBtn">Check out</button>
                     <div className="continue-shopping">

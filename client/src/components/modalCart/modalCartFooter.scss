@@ -1,25 +1,32 @@
 .cart-summary {
   .cart-checkout {
+    .subtotal{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 19px;
+      color: #3c2b2b;
+    }
     .modalCheckBtn {
-      width: 100%;
       color: #fff;
-      padding: 10px 0;
+      padding: 10px 100px;
       border-radius: 7px;
       background-color: #e34875;
+      font-size: 15px;
+      font-weight: 700;
     }
     .continue-shopping {
       text-align: center;
       .viewCart {
-        text-decoration: underline;
+        margin-top: 15px;
+        color: #231c1c;
+        text-decoration: underline #6d4f4f;
       }
     }
   }
 }
 
-// .chakra-modal__footer,
-// .css-k0waxj {
-// }
-.chakra-modal__footer,
-.s-k0waxj {
-  padding: 0px;
+.chakra-modal__footer{
+  width: 100%;
 }
+
