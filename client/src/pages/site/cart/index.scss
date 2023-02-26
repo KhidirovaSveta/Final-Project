@@ -167,4 +167,35 @@
       align-items: center;
     }
   }
+
+  @media (max-width: 765px) {
+    .container {
+      .titles {
+        display: none;
+      }
+      .cart-item {
+        display: block;
+        padding: 15px 15px;
+        width: 100%;
+        .cart-product {
+          display: block;
+          img {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+        }
+      }
+      .cart-product-total-price {
+        justify-self: left;
+      }
+      .cart-summary {
+        flex-direction: column;
+        padding: 15px 15px;
+        width: 100%;
+        .clear-btn {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
 }

@@ -69,7 +69,7 @@ const CartProducts = () => {
                 cart.cartItems.map((cartItem) => (
                   <div className="cart-item" key={cartItem.id}>
                     <div className="cart-product">
-                      <img src={cartItem.image1} alt={cartItem.name} />
+                      <img src={cartItem.image1} alt={cartItem.name}/>
                       <div>
                         <h3 className="card-product-name">{cartItem.name}</h3>
                         <button

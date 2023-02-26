@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./index.scss";
 import { Link } from "react-router-dom";
-// import { IoTrashOutline } from "react-icons/io5";
 import { FiChevronRight } from "react-icons/fi";
 import { deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 import { addToCart } from "../../../redux-toolkit/slice/cartSlice";
@@ -11,10 +10,6 @@ import { CiStar } from "react-icons/ci";
 const Wishlist = () => {
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlistReducer);
-
-  const handleDelete = (product) => {
-    dispatch(deleteData(product));
-  };
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));

@@ -9,6 +9,7 @@
     margin-bottom: 85px;
     .wishlist {
       font-size: 40px;
+      font-weight: 700;
     }
     .navlink {
       display: flex;
@@ -66,7 +67,7 @@
                 transform: scale(1.1);
               }
             }
-            .wishlist-added{
+            .wishlist-added {
               background-color: #000;
               color: #fff;
             }

@@ -7,6 +7,7 @@ import Register from "../pages/admin/register";
 import AboutUs from "../pages/site/about-us";
 import Wishlist from "../pages/site/wishlist";
 import CartProducts from "../pages/site/cart";
+import AllProducts from "../pages/site/products";
 
 const Routing = () => {
   return (
@@ -19,6 +20,7 @@ const Routing = () => {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<CartProducts />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/products" element={<AllProducts />} />
       </Routes>
     </div>
   );
