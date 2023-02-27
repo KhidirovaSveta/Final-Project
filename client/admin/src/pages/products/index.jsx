@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteData, getData } from "../../redux/slice/getProductsSlice";
-import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import {
   Table,
@@ -26,21 +25,19 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import AddProductFormik from "../../components/addProduct";
-import { FaRegTrashAlt} from "react-icons/fa";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { VscEdit } from "react-icons/vsc";
+
+import SideBar from "../../components/sideBar";
 
 const AllProducts = () => {
   const product = useSelector((state) => state.getDataReducer);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     dispatch(getData());
   }, []);
-
-  const handleRemove = (id) => {
-    dispatch(deleteData(id));
-  };
 
   return (
     <div id="table">
@@ -54,7 +51,7 @@ const AllProducts = () => {
               <AddProductFormik />
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme='gray' mr={3} onClick={onClose}>
+              <Button colorScheme="gray" mr={3} onClick={onClose}>
                 Close
               </Button>
             </ModalFooter>
@@ -62,20 +59,18 @@ const AllProducts = () => {
         </Modal>
       </>
 
-      <div className="action-buttons">
-        <Button onClick={() => navigate(-1)} className="backBtn">
-          {" "}
-          back{" "}
-        </Button>
-        <Button colorScheme="black" variant="outline" onClick={onOpen}>
-          {" "}
-          Add product{" "}
-        </Button>
-      </div>
+      <SideBar />
 
       <div className="productTable">
+        <div className="action-buttons">
+          <Button colorScheme="black" variant="outline" onClick={onOpen}>
+            {" "}
+            Add product{" "}
+          </Button>
+        </div>
+
         <TableContainer>
-          <Table variant="striped" colorScheme="pink">
+          <Table variant="striped" colorScheme="gray">
             <TableCaption> Sweeties products</TableCaption>
             <Thead>
               <Tr>
@@ -96,9 +91,20 @@ const AllProducts = () => {
                       <Td>{product.name}</Td>
                       <Td isNumeric>{product.price}.00</Td>
                       <Td>{product.brand}</Td>
-                      
+
                       <Td>
-                      <FaRegTrashAlt onClick={() => handleRemove(product)}/>
+                        <FaRegTrashAlt
+                          onClick={() =>
+                            dispatch(deleteData(product._id)).then(() =>
+                              dispatch(getData())
+                            )
+                          }
+                        />
+                      </Td>
+                      <Td>
+                        <Button>
+                          <VscEdit />
+                        </Button>
                       </Td>
                     </Tr>
                   </>

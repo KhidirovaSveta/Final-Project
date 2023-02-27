@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
-  loading: false,
   data: [],
+  loading: false,
   error: "",
 };
 
@@ -26,6 +26,12 @@ export const postData = createAsyncThunk("postData", async (values) => {
 export const deleteData = createAsyncThunk("deleteData", async (_id) => {
   await axios.delete(`http://localhost:8080/sweeties/${_id}`);
 });
+
+export const updateData = createAsyncThunk("updateData", async (obj) => {
+  await axios.put(`http://localhost:8080/sweeties/${obj._id}`, obj);
+});
+
+
 
 
 export const getDataSlice = createSlice({

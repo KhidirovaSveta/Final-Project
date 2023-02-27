@@ -29,25 +29,132 @@
   }
 
   .container {
-    .sortSear{
+    .sortSear {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
-      .product-search{
+      .product-search {
         padding: 7px 10px;
         width: 40%;
         background-color: transparent;
         border: 1px solid #6d4f4f;
       }
     }
+
     .productCards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      .productCard {
-        .products-img {
-          width: 300px;
+      text-align: start;
+      display: inline-block;
+      position: relative;
+      .cards {
+        padding: 20px 10px;
+        .images {
+          .immg {
+            width: 300px;
+          }
+          .action-btn {
+            border: none;
+          }
+          .action-icon {
+            box-sizing: border-box;
+            visibility: hidden;
+            position: relative;
+            background-color: #fff;
+            border-radius: 50%;
+            font-size: 41px;
+            padding: 11px 11px;
+            color: #000;
+            left: 240px;
+            bottom: 280px;
+            cursor: pointer;
+            transition: all 0.2s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          .wishlist-added {
+            background-color: #000;
+            color: #fff;
+          }
+          .chakraBtn {
+            visibility: hidden;
+          }
+          .view {
+            position: relative;
+            left: 234px;
+            bottom: 295px;
+          }
+
+          .quick-add-btn {
+            box-sizing: border-box;
+            visibility: hidden;
+            position: relative;
+            background-color: #fff;
+            bottom: 175px;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px 0;
+            width: 85%;
+            margin-left: 8%;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.1s;
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+          &:hover {
+            .img-top {
+              display: inline-block;
+              padding: 17px 4px;
+              padding-left: 10px;
+              width: 99%;
+              height: 80%;
+              transition: all 0.9s;
+              transition-timing-function: ease;
+            }
+            .quick-add-btn {
+              visibility: visible;
+              // position: relative;
+              z-index: 2;
+            }
+            .wishlist {
+              visibility: visible;
+              // position: relative;
+              z-index: 5;
+            }
+            .view {
+              visibility: visible;
+              // position: relative;
+              z-index: 5;
+            }
+          }
+          .img-top {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+            &:hover {
+              opacity: 1;
+              transition-duration: 1s;
+            }
+          }
+        }
+      
+        a {
+          text-decoration: none;
+        }
+        .product-info {
+          color: #6d4f4f;
+          .productName {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
         }
       }
     }
