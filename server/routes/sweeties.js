@@ -1,11 +1,10 @@
 import express from "express";
+import { createProduct, getSweeties, getSweetiesById } from "../controllers/sweeties.js";
 
-import { getSweeties, getSweetiesById } from "../controllers/sweeties.js";
-// import {getSweetiesBySlug} from "../controllers/sweeties.js"
 const router = express.Router();
 
 router.get("/", getSweeties);
 router.get("/:id", getSweetiesById);
-// router.get("/:slug", getSweetiesBySlug);
+router.post("/", createProduct);
 
 export default router;

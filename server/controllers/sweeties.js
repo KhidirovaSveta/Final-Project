@@ -24,19 +24,6 @@ export const getSweetiesById = async (req, res) => {
   }
 };
 
-// //get products by slug
-// export const  getSweetiesBySlug = async (req, res) => {
-//   const { slug } = req.params;
-//   try {
-//     const sweeties = await Sweeties.findOne({ slug: slug })
-//     .select("_id type ")
-//     res.status(200).json({sweeties});
-//   } catch (error) {
-//     res.status(500).json({
-//       message: error.message,
-//     });
-//   }
-// };
 
 //delete product by id
 export const deleteProduct = async (req, res) => {
@@ -44,6 +31,20 @@ export const deleteProduct = async (req, res) => {
   try {
     const deletedProduct = await Sweeties.findByIdAndDelete(id);
     res.json(deletedProduct);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+//post new product
+export const createProduct = async (req, res) => {
+
+  // const product = req.body;
+  
+  const newProduct = new Sweeties(req.body);
+  try {
+    await newProduct.save();
+    res.status(201).json(newProduct);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

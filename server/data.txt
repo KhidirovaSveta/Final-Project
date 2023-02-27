@@ -15,7 +15,7 @@
 "image3": "",
 "image4": "",
 "name": "The Chocolatey Classic",
-"slug": "The Chocolatey Classic",
+"slug": "",
 "description": "",
 "price": 32.0,
 "availability": "In Stock",

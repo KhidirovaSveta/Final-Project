@@ -47,10 +47,10 @@ const sweetiesSchema = new Schema(
       type: String,
       required: true,
     },
-    category:{
-      type:mongoose.Schema.Types.ObjectId, ref:'Category',
-      required:true
-    }
+    // category:{
+    //   type:mongoose.Schema.Types.ObjectId, ref:'Category',
+    //   required:true
+    // }
   },
   { timestamps: true }
 );
