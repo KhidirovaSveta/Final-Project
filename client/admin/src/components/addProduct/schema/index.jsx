@@ -11,7 +11,7 @@ const AddProductSchema = Yup.object().shape({
     .required("Required"),
     description: Yup.string()
     .min(2, "Too Short!")
-    .max(250, "Too Long!")
+    .max(380, "Too Long!")
     .required("Required"),
     price: Yup.number()
     .min(2, "Too Short!")

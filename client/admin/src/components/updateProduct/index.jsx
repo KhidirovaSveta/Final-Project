@@ -48,6 +48,7 @@ const UpdateProductFormik = () => {
         validationSchema={UpdateProductSchema}
         onSubmit={(values) => {
           dispatch(updateData(values)).then(() => dispatch(getData()));
+          console.log(values);
         }}
       >
         {({ errors, touched }) => (

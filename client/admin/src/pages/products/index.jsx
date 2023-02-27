@@ -94,6 +94,7 @@ const AllProducts = () => {
 
                       <Td>
                         <FaRegTrashAlt
+                          className="removeBtn btn"
                           onClick={() =>
                             dispatch(deleteData(product._id)).then(() =>
                               dispatch(getData())
@@ -102,9 +103,9 @@ const AllProducts = () => {
                         />
                       </Td>
                       <Td>
-                        <Button>
-                          <VscEdit />
-                        </Button>
+                        {/* <Button> */}
+                        <VscEdit className="editBtn btn" id={product._id} />
+                        {/* </Button> */}
                       </Td>
                     </Tr>
                   </>
