@@ -26,15 +26,18 @@ export const getSweetiesById = async (req, res) => {
 
 
 //delete product by id
-export const deleteProduct = async (req, res) => {
+export const deleteProductById = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedProduct = await Sweeties.findByIdAndDelete(id);
     res.json(deletedProduct);
   } catch (error) {
     res.status(500).json({ message: error.message });
+    console.log(error);
   }
 };
+
+
 
 //post new product
 export const createProduct = async (req, res) => {
@@ -47,5 +50,19 @@ export const createProduct = async (req, res) => {
     res.status(201).json(newProduct);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+
+//UPDATE BLOG
+export const updateProductEdit = async (req, res) => {
+  const { id } = req.params;
+  // const blog = req.body;
+  try {
+    const updateProduct = await Sweeties.findByIdAndUpdate(id, req.body);
+    res.json(updateProduct);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
   }
 };
