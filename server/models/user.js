@@ -32,21 +32,7 @@ const userShema = new mongoose.Shema({
     default:'user',
     enum: ['user', 'admin', 'superadmin']
 },
-hash_password: {
-  type: String,
-  required: true
-},
 }, {timestamps: true});
 
-userSchema.virtual('fullName')
-.get(function(){
-    return `${this.firstName} ${this.lastName}`;
-});
-
-userSchema.methods = {
-    authenticate:async function(password){
-        return await bcrypt.compare(password, this.hash_password)
-    }
-}
 
 module.exports = mongoose.model("User", userShema) 
