@@ -27,6 +27,7 @@ export const deleteData = createAsyncThunk("deleteData", async (_id) => {
   await axios.delete(`http://localhost:8080/sweeties/${_id}`);
 });
 
+
 export const getDataSlice = createSlice({
   name: "products",
   initialState,

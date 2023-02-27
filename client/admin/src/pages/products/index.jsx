@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../redux/slice/getProductsSlice";
+import { deleteData, getData } from "../../redux/slice/getProductsSlice";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import {
@@ -26,6 +26,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import AddProductFormik from "../../components/addProduct";
+import { FaRegTrashAlt} from "react-icons/fa";
 
 const AllProducts = () => {
   const product = useSelector((state) => state.getDataReducer);
@@ -36,6 +37,10 @@ const AllProducts = () => {
   useEffect(() => {
     dispatch(getData());
   }, []);
+
+  const handleRemove = (id) => {
+    dispatch(deleteData(id));
+  };
 
   return (
     <div id="table">
@@ -91,6 +96,10 @@ const AllProducts = () => {
                       <Td>{product.name}</Td>
                       <Td isNumeric>{product.price}.00</Td>
                       <Td>{product.brand}</Td>
+                      
+                      <Td>
+                      <FaRegTrashAlt onClick={() => handleRemove(product)}/>
+                      </Td>
                     </Tr>
                   </>
                 );
