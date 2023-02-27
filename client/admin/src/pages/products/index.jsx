@@ -49,7 +49,7 @@ const AllProducts = () => {
               <AddProductFormik />
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
+              <Button colorScheme='gray' mr={3} onClick={onClose}>
                 Close
               </Button>
             </ModalFooter>
@@ -62,7 +62,7 @@ const AllProducts = () => {
           {" "}
           back{" "}
         </Button>
-        <Button colorScheme="pink" variant="outline" onClick={onOpen}>
+        <Button colorScheme="black" variant="outline" onClick={onOpen}>
           {" "}
           Add product{" "}
         </Button>
