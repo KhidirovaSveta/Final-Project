@@ -4,6 +4,7 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import {
   addToCart,
@@ -38,6 +39,10 @@ const CartProducts = () => {
 
   return (
     <div id="Card">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart</title>
+      </Helmet>
       <div className="container">
         <div className="cardHeader">
           <h1 className="shopCard">Shopping Cart</h1>
@@ -69,7 +74,7 @@ const CartProducts = () => {
                 cart.cartItems.map((cartItem) => (
                   <div className="cart-item" key={cartItem.id}>
                     <div className="cart-product">
-                      <img src={cartItem.image1} alt={cartItem.name}/>
+                      <img src={cartItem.image1} alt={cartItem.name} />
                       <div>
                         <h3 className="card-product-name">{cartItem.name}</h3>
                         <button

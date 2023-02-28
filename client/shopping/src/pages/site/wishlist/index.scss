@@ -89,5 +89,16 @@
         }
       }
     }
+    @media only screen and (max-width: 992px) {
+      .wish-cards {
+        width: 100%;
+        padding-left: 50px;
+      }
+    }
+    @media only screen and (max-width: 765px) {
+      .wish-cards {
+        width: 100%;
+      }
+    }
   }
 }

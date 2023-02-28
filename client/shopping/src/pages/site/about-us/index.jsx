@@ -16,10 +16,15 @@ import Cookie from "../../../images/Cookie_about.webp";
 import FunImg from "../../../images/fun.webp";
 import PartyPacks from "../../../images/party_packs.webp";
 import AboutCarousel from "../../../components/about-carousel";
+import {Helmet} from "react-helmet";
 
 const AboutUs = () => {
   return (
     <div id="AboutUs">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>About Us</title>
+      </Helmet>
       <div className="aboutHeader">
         <h1 className="aboutHeaderTag">About Us </h1>
         <div className="navlink">

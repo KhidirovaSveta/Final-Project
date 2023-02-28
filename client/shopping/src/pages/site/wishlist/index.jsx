@@ -6,6 +6,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { deleteData } from "../../../redux-toolkit/slice/wishlistSlice";
 import { addToCart } from "../../../redux-toolkit/slice/cartSlice";
 import { CiStar } from "react-icons/ci";
+import {Helmet} from "react-helmet";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ const Wishlist = () => {
 
   return (
     <div className="wishList">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Wishlist</title>
+      </Helmet>
       <div className="wishHeader">
         <h1 className="wishlist">Wishlist</h1>
         <div className="navlink">
@@ -34,9 +39,9 @@ const Wishlist = () => {
         <div className="wish-cards">
           {wishlist?.data?.map((product) => {
             return (
-              <div className="wish-card">
+              <div className="wish-card" key={product._id}>
                 <Link to={`/details/${product._id}`}>
-                  <img src={product.image2} alt="" className="wishImg" />
+                  <img src={product.image2} alt={product.name} className="wishImg" />
                 </Link>
                 <div className="wish-info">
                   <div className="w-i">

@@ -1,0 +1,24 @@
+#NotFound{
+    display: flex;
+    background-color: #fffbf3;
+    text-align: center;
+    color: #6d4f4f;
+    .not{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 110px 0;
+        .num4{
+            font-size: 95px;
+        }
+        .velvetImg{
+            width: 350px;
+            border-radius: 60px;
+            padding: 0 25px;
+        }
+    }
+    .not-text{
+        font-size: 45px;
+        margin-bottom: 40px;
+    }
+}

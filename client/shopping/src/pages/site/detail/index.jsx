@@ -16,6 +16,7 @@ import {
   decreaseCart,
   getTotals,
 } from "../../../redux-toolkit/slice/cartSlice";
+import {Helmet} from "react-helmet";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
@@ -57,6 +58,10 @@ const Details = () => {
 
   return (
     <div id="Details">
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>{product.name}</title>
+      </Helmet>
       <div className="container">
         <div className="navlink">
           <Link to={"/"}> Home </Link>

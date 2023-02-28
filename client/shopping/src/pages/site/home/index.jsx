@@ -17,10 +17,16 @@ import cakeCollaction5 from "../../../images/cake_collection_5.webp";
 import cakeCollaction6 from "../../../images/cake_collection_6.webp";
 import HeaderTab from "../../../components/header-tab";
 import Carousel from "../../../components/products-carousel";
+import {Helmet} from "react-helmet";
 
 const Home = () => {
   return (
     <div id="Home">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Sweeties</title>
+      </Helmet>
+
       <HeaderTab />
       <div className="second-section">
         <h1 className="second-section-header">More cake, cookies, pie</h1>
