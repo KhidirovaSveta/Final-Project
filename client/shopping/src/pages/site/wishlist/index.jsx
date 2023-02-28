@@ -40,12 +40,13 @@ const Wishlist = () => {
           {wishlist?.data?.map((product) => {
             return (
               <div className="wish-card" key={product._id}>
-                <Link to={`/details/${product._id}`}>
+                {/* <Link to={`/details/${product._id}`}> */}
                   <img src={product.image2} alt={product.name} className="wishImg" />
-                </Link>
+                {/* </Link> */}
                 <div className="wish-info">
                   <div className="w-i">
                     <h3> {product.name}</h3>
+
                     {/* <button
                       className="delBtn"
                       onClick={() => handleDelete(product)}

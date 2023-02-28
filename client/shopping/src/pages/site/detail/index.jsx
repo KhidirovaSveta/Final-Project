@@ -16,7 +16,18 @@ import {
   decreaseCart,
   getTotals,
 } from "../../../redux-toolkit/slice/cartSlice";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import 'swiper/css/navigation';
+import "./styles.scss";
+
+import { FreeMode, Pagination, Navigation } from "swiper";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
@@ -58,7 +69,7 @@ const Details = () => {
 
   return (
     <div id="Details">
-        <Helmet>
+      <Helmet>
         <meta charSet="utf-8" />
         <title>{product.name}</title>
       </Helmet>
@@ -70,16 +81,36 @@ const Details = () => {
           <FiChevronRight className="right" />
           <p className="product-name">{product.name}</p>
         </div>
+
         <div className="detail">
           <div className="details-img">
-            <div className="rest-img">
-              <img src={product.image1} alt="" width={"100px"} />
-              <img src={product.image2} alt="" width={"100px"} />
-              <img src={product.image3} alt="" width={"100px"} />
-              <img src={product.image4} alt="" width={"100px"} />
-            </div>
-            <img src={product.image1} alt="" width={"550px"} />
+            <>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={0}
+                freeMode={true}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[FreeMode, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <img src={product.image1} alt="" width={"150"} />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={product.image2} alt="" width={"150"} />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={product.image3} alt="" width={"150"} />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={product.image4} alt="" width={"150"} />
+                </SwiperSlide>
+              </Swiper>
+            </>
           </div>
+
           <div className="details-info">
             <div className="detail-title">
               <h1 className="detailsHeader">{product.name}</h1>
@@ -114,7 +145,6 @@ const Details = () => {
             </div>
           </div>
         </div>
-
 
         {/* Info section */}
 

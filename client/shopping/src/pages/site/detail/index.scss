@@ -24,19 +24,9 @@
     .detail {
       display: flex;
       justify-content: space-between;
-      column-gap: 25px;
       padding-bottom: 50px;
       .details-img {
-        display: flex;
-        img {
-          padding: 0 2px;
-        }
-        .rest-img {
-          img {
-            padding-bottom: 10px;
-            padding-right: 10px;
-          }
-        }
+        width: 45%;
       }
       .details-info {
         color: #6d4f4f;
