@@ -21,14 +21,3 @@
 "availability": "In Stock",
 "brand": "Minimog",  
 
-
-"image1": "https://cdn.shopify.com/s/files/1/0034/7550/5225/products/09212020_PDP-OVERHAUL6094-1050x1050.jpg?format=pjpg&v=1608218721&width=1080",
-"image2": "https://cdn.shopify.com/s/files/1/0034/7550/5225/products/09212020_PDP-OVERHAUL6103-1050x1050.jpg?format=pjpg&v=1608218701&width=1080",
-"image3": "https://cdn.shopify.com/s/files/1/0034/7550/5225/products/01_Hero_CHOC-BDAY_CA_c8bb7fcc-68b5-41f4-88fa-67943f94bc0d.jpg?format=pjpg&v=1608218732&width=1080",
-"image4": "https://cdn.shopify.com/s/files/1/0034/7550/5225/products/09212020_PDP-OVERHAUL5939_CA_GOO_888c097e-7dc6-4d9e-bbdd-aad28221d567.jpg?format=pjpg&v=1608218745&width=1080",
-"name": "The Chocolatey Classic",
-"slug": "The Chocolatey Classic",
-"description": "Wondering how to celebrate that person whose two great passions in life are chocolate and cake? A decadent Chocolate Birthday Cake and a dozen fudgy Chocolate B'Day Truffles should do the trick.",
-"price": 89,
-"availability": "In Stock",
-"brand": "Minimo"
