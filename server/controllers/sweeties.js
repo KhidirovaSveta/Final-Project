@@ -4,7 +4,7 @@ import Sweeties from "../models/index.js";
 
 export const getSweeties = async (req, res) => {
   try {
-    const sweeties = await Sweeties.find();
+    const sweeties = await Sweeties.find({ category: req.query.category });
     res.status(200).json(sweeties);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -15,7 +15,7 @@ export const getSweeties = async (req, res) => {
 export const getSweetiesById = async (req, res) => {
   const { id } = req.params;
   try {
-    const sweeties = await Sweeties.findById(id);
+    const sweeties = await Sweeties.findById(id).populate("category");
     res.status(200).json(sweeties);
   } catch (error) {
     res.status(500).json({
@@ -23,7 +23,6 @@ export const getSweetiesById = async (req, res) => {
     });
   }
 };
-
 
 //delete product by id
 export const deleteProductById = async (req, res) => {
@@ -37,13 +36,10 @@ export const deleteProductById = async (req, res) => {
   }
 };
 
-
-
 //post new product
 export const createProduct = async (req, res) => {
-
   // const product = req.body;
-  
+
   const newProduct = new Sweeties(req.body);
   try {
     await newProduct.save();

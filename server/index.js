@@ -14,6 +14,7 @@ app.use(cors());
 app.use("/sweeties", sweetiesRoutes);
 app.use("/user", userRouter);
 
+
 mongoose.set("strictQuery", true);
 const port = 8080;
 
