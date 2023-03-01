@@ -31,7 +31,7 @@ const Wishlist = () => {
         <div className="navlink">
           <Link to={"/"}> Home </Link>
           <FiChevronRight className="right" />
-          <p>Your Shopping Cart</p>
+          <p>Your Wishlist</p>
         </div>
       </div>
 

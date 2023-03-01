@@ -35,6 +35,7 @@ const Register = () => {
                   email: values.email,
                   password: values.password,
                 });
+                window.location.href = "/login"
                 localStorage.setItem("token", values.data)
               }}
             >

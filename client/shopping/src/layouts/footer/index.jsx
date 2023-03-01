@@ -74,7 +74,7 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <NavLink to={"/"}> Product Compare </NavLink>
+                  <NavLink to={"/compare"}> Product Compare </NavLink>
                 </li>
               </ul>
             </div>

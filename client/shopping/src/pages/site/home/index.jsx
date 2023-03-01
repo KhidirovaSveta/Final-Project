@@ -80,13 +80,13 @@ const Home = () => {
             </div>
             <div className="shop-card">
               <Link to={`/`}>
-                <img src={cakeCollaction4} alt="" width={"200px"} />
+                <img src={cakeCollaction5} alt="" width={"200px"} />
                 <h3 className="shop-card-header">Truffle</h3>
               </Link>
             </div>
             <div className="shop-card">
               <Link to={`/`}>
-                <img src={cakeCollaction5} alt="" width={"200px"} />
+                <img src={cakeCollaction4} alt="" width={"200px"} />
                 <h3 className="shop-card-header">Ice Cream</h3>
               </Link>
             </div>

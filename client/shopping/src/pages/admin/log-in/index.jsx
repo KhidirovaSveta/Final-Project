@@ -33,6 +33,7 @@ const LogIn = () => {
                     email: values.email,
                     password: values.password,
                   });
+                  window.location.href = "/"
                   localStorage.setItem("token", values.data)
                 }}
               >

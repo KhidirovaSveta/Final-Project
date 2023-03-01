@@ -10,21 +10,6 @@ import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
 import { CiStar } from "react-icons/ci";
-import { FaRegEye } from "react-icons/fa";
-
-// import {
-//   Modal,
-//   ModalOverlay,
-//   ModalContent,
-//   ModalHeader,
-//   ModalFooter,
-//   ModalBody,
-//   ModalCloseButton,
-//   useDisclosure,
-//   Button,
-// } from "@chakra-ui/react";
-
-// import ModalViewCarousel from "../quick-view";
 
 import { getData } from "../../redux-toolkit/slice/dataSlice";
 import { addData, deleteData } from "../../redux-toolkit/slice/wishlistSlice";
@@ -54,9 +39,6 @@ const Carousel = () => {
     dispatch(getData());
   }, []);
 
-  const findId = (obj) => {
-    console.log(obj);
-  };
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -64,20 +46,6 @@ const Carousel = () => {
 
   return (
     <div>
-      {/* <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <ModalViewCarousel />
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal> */}
-
       <>
         
         <Drawer
@@ -169,14 +137,6 @@ const Carousel = () => {
                     )} */}
 
                     <br />
-                    <Button
-                      onClick={() => {
-                        return onOpen(), findId(product);
-                      }}
-                      className="chakraBtn"
-                    >
-                      <FaRegEye className="view action-icon" />
-                    </Button>
 
                     <Button
                       className="quick-add-btn"

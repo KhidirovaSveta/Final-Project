@@ -148,7 +148,7 @@ const Details = () => {
 
         {/* Info section */}
 
-        <Tabs>
+        <Tabs className="productstabs">
           <TabList>
             <div className="tabsHeaders">
               <Tab className="tabHeader">Product description</Tab>
