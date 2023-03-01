@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import Button from "../../../components/button";
 import LogInSchema from "./schema";
+import logInUser from "../../../apiColls/user";
 
 const LogIn = () => {
   return (
@@ -27,9 +28,12 @@ const LogIn = () => {
                   email: "",
                 }}
                 validationSchema={LogInSchema}
-                onSubmit={(values) => {
-                  // same shape as initial values
-                  console.log(values);
+                onSubmit={async (values) => {
+                  await logInUser({
+                    email: values.email,
+                    password: values.password,
+                  });
+                  localStorage.setItem("token", values.data)
                 }}
               >
                 {({ errors, touched }) => (
@@ -41,19 +45,26 @@ const LogIn = () => {
                       className="loginInput"
                     />
                     {errors.email && touched.email ? (
-                      <div><p className="red-txt">{errors.email}</p></div>
+                      <div>
+                        <p className="red-txt">{errors.email}</p>
+                      </div>
                     ) : null}
-                    
-                    <Field name="password" placeholder="Password" className="loginInput"/>
+                    <Field
+                      name="password"
+                      placeholder="Password"
+                      className="loginInput"
+                    />
                     {errors.password && touched.password ? (
-                      <div><p className="red-txt">{errors.password}</p></div>
-                    ) : null} <br/>
-
-                    <NavLink to={"/login"}>
-                    Forgot your password?
-                    </NavLink>
-
-                    <button className="signinBtn"> LOG IN </button>
+                      <div>
+                        <p className="red-txt">{errors.password}</p>
+                      </div>
+                    ) : null}{" "}
+                    <br />
+                    <NavLink to={"/login"}>Forgot your password?</NavLink>
+                    <button type="submit" className="signinBtn">
+                      {" "}
+                      LOG IN{" "}
+                    </button>
                   </Form>
                 )}
               </Formik>

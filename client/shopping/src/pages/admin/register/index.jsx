@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import RegisterSchema from "./schema/index";
 import { Formik, Form, Field } from "formik";
+import registerUser from "../../../apiColls/register";
 
 const Register = () => {
   return (
@@ -27,31 +28,42 @@ const Register = () => {
                 password: "",
               }}
               validationSchema={RegisterSchema}
-              onSubmit={(values) => {
-                // same shape as initial values
-                console.log(values);
+              onSubmit={async (values) => {
+                await registerUser({
+                  firstName: values.firstName,
+                  lastName: values.lastName,
+                  email: values.email,
+                  password: values.password,
+                });
+                localStorage.setItem("token", values.data)
               }}
             >
               {({ errors, touched }) => (
                 <Form>
                   <div className="registInputs">
-                    <Field name="firstName"  placeholder="First Name"/>
+                    <Field name="firstName" placeholder="First Name" />
                     {errors.firstName && touched.firstName ? (
-                      <div><p className="red-txt">{errors.firstName}</p></div>
+                      <div>
+                        <p className="red-txt">{errors.firstName}</p>
+                      </div>
                     ) : null}
                   </div>
 
                   <div className="registInputs">
                     <Field name="lastName" placeholder="Last Name" />
                     {errors.lastName && touched.lastName ? (
-                      <div><p className="red-txt">{errors.lastName}</p></div>
+                      <div>
+                        <p className="red-txt">{errors.lastName}</p>
+                      </div>
                     ) : null}
                   </div>
 
                   <div className="registInputs">
                     <Field name="email" type="email" placeholder="Email" />
                     {errors.email && touched.email ? (
-                      <div><p className="red-txt">{errors.email}</p></div>
+                      <div>
+                        <p className="red-txt">{errors.email}</p>
+                      </div>
                     ) : null}
                   </div>
 
@@ -66,6 +78,7 @@ const Register = () => {
                         <p className="red-txt">{errors.password}</p>
                       </div>
                     ) : null}
+                    <button className="regBtn btn">REGISTER</button>
                   </div>
                 </Form>
               )}
@@ -76,7 +89,6 @@ const Register = () => {
               and promotions. To opt out, click unsubscribe in our emails.
             </p>
 
-            <button className="regBtn btn">REGISTER</button>
             <br />
             <NavLink to={"/login"}>
               {" "}
