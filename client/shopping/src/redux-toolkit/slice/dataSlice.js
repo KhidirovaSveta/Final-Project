@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   data: [],
   error: "",
+  customers: {}
 };
 
 export const getData = createAsyncThunk("getData", async (value) => {
@@ -30,7 +31,11 @@ export const deleteData = createAsyncThunk("deleteData", async (_id) => {
 export const getDataSlice = createSlice({
   name: "sweeties",
   initialState,
-  reducers: {},
+  reducers: {
+    usersData: (state, action) => {
+      state.customers = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(getData.pending, (state, action) => {
       state.loading = true;

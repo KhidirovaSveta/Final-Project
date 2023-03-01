@@ -21,3 +21,6 @@
 "availability": "In Stock",
 "brand": "Minimog",  
 
+    "image": 
+    "name": 
+    "description":

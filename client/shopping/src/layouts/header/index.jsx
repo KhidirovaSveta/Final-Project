@@ -5,11 +5,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import "./index.scss";
 import { IoBagOutline } from "react-icons/io5";
 import { CiStar, CiUser } from "react-icons/ci";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CiLogin } from "react-icons/ci";
+// import { logout } from "../../redux-toolkit/slice/authSlice";
+import { getData } from "../../redux-toolkit/slice/dataSlice";
 
 const Header = () => {
   const { cartTotalQuantity } = useSelector((state) => state.cartSliceReducer);
   const [sticky, setSticky] = useState("");
+  const dispatch = useDispatch();
+  const customers = useSelector((state) => state.getDataReducer);
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
@@ -17,6 +27,10 @@ const Header = () => {
       window.removeEventListener("scroll", isSticky);
     };
   }, []);
+
+  // const handleLogout = () => {
+  //   dispatch(logout)
+  // }
 
   const isSticky = () => {
     const scrollTop = window.scrollY;
@@ -56,7 +70,7 @@ const Header = () => {
 
                 <li>
                   {" "}
-                  <NavLink to={"/"}> Recipes </NavLink>{" "}
+                  <NavLink to={"/recipes"}> Recipes </NavLink>{" "}
                 </li>
 
                 <li>
@@ -66,7 +80,7 @@ const Header = () => {
 
                 <li>
                   {" "}
-                  <NavLink to={"/"}> Cookbooks </NavLink>{" "}
+                  <NavLink to={"/cookbooks"}> Cookbooks </NavLink>{" "}
                 </li>
               </ul>
             )}
@@ -88,7 +102,7 @@ const Header = () => {
 
               <li>
                 {" "}
-                <NavLink to={"/"}> Recipes </NavLink>{" "}
+                <NavLink to={"/recipes"}> Recipes </NavLink>{" "}
               </li>
 
               <li>
@@ -98,11 +112,28 @@ const Header = () => {
 
               <li>
                 {" "}
-                <NavLink to={"/"}> Cookbooks </NavLink>{" "}
+                <NavLink to={"/cookbooks"}> Cookbooks </NavLink>{" "}
               </li>
             </ul>
 
             <div className="action-icons">
+              <NavLink to={"/"}>
+                {" "}
+                <CiLogin className="action-icon  d-non logIn" />{" "}
+              </NavLink>
+
+              {/* <div className="customers">
+                {customers?.customers?.firstName == undefined ? (
+                  <div onClick={() => setUser(!user)} className="user">
+                    <CiUser className="action-icon d-non" />{" "}
+                  </div>
+                ) : (
+                  <div onClick={() => setUser(!user)} className="user">
+                    <p>{customers.firstName}</p>
+                  </div>
+                )}
+              </div> */}
+
               <NavLink to={"/login"}>
                 {" "}
                 <CiUser className="action-icon d-non" />{" "}

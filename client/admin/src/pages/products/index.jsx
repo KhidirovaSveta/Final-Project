@@ -29,6 +29,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { VscEdit } from "react-icons/vsc";
 
 import SideBar from "../../components/sideBar";
+import UpdateProductFormik from "../../components/updateProduct";
 
 const AllProducts = () => {
   const product = useSelector((state) => state.getDataReducer);
@@ -103,9 +104,8 @@ const AllProducts = () => {
                         />
                       </Td>
                       <Td>
-                        {/* <Button> */}
-                        <VscEdit className="editBtn btn" id={product._id} />
-                        {/* </Button> */}
+                        <VscEdit className="editBtn btn"/>
+                        {/* <UpdateProductFormik/> */}
                       </Td>
                     </Tr>
                   </>

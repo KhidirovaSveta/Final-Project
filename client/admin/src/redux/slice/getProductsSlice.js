@@ -19,6 +19,10 @@ export const getData = createAsyncThunk("getData", async (value) => {
   }
 });
 
+export const getUsersData = createAsyncThunk("getData", async (value) => {
+  const response = await axios.get("http://localhost:8080/user");
+})
+
 export const postData = createAsyncThunk("postData", async (values) => {
   await axios.post("http://localhost:8080/sweeties", values);
 });

@@ -7,20 +7,20 @@ const SideBar = () => {
   return (
     <div id="SideBar">
       <ul>
-        <li>
-          <BiUser />
-          <NavLink to={"/"}> Users </NavLink>
-        </li>
 
         <li>
           <BiCart />
           <NavLink to={"/products"}> Products </NavLink>
         </li>
+        {/* <li>
+          <BiUser />
+          <NavLink to={"/recipes"}> Recipes </NavLink>
+        </li> */}
 
-        <li>
+        {/* <li>
           <BiCategory />
           <NavLink to={"/"}> Category </NavLink>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { useFormik } from "formik";
 import UpdateProductSchema from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
-import { updateData } from "../../redux/slice/getProductsSlice";
+import { getData, updateData } from "../../redux/slice/getProductsSlice";
 import { useState } from "react";
 
 const UpdateProductFormik = () => {
@@ -11,8 +11,30 @@ const UpdateProductFormik = () => {
   const dispatch = useDispatch();
   const [editData, setEditData] = useState(false);
 
+  const { handleSubmit, handleChange, values, errors, touched, resetForm } =
+    useFormik({
+      initialValues: {
+        image1: "",
+        image2: "",
+        image3: "",
+        image4: "",
+        name: "",
+        slug: "",
+        description: "",
+        price: "",
+        availability: "",
+        brand: "",
+      },
+      validationSchema: UpdateProductSchema,
+      onSubmit: (values) => {
+        dispatch(updateData(values)).then(() => dispatch(getData()));
+        resetForm();
+      },
+    });
+
   const productEdit = async (id) => {
-    setEditData(true);
+    console.log(values);
+    // setEditData(true);
     product.data?.map((e) => {
       if (e._id === id) {
         values.id = e._id;
@@ -32,86 +54,145 @@ const UpdateProductFormik = () => {
 
   return (
     <div id="formAdd">
-      <Formik
-        initialValues={{
-          image1: "",
-          image2: "",
-          image3: "",
-          image4: "",
-          name: "",
-          slug: "",
-          description: "",
-          price: "",
-          availability: "",
-          brand: "",
-        }}
-        validationSchema={UpdateProductSchema}
-        onSubmit={(values) => {
-          dispatch(updateData(values)).then(() => dispatch(getData()));
-          console.log(values);
-        }}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <div className="addInput">
-              <Field name="image1" placeholder="image1" />
-              {errors.image1 && touched.image1 ? (
-                <div>{errors.image1}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="image2" placeholder="image2" />
-              {errors.image2 && touched.image2 ? (
-                <div>{errors.image2}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="image3" placeholder="image3" />
-              {errors.image3 && touched.image3 ? (
-                <div>{errors.image3}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="image4" placeholder="image4" />
-              {errors.image4 && touched.image4 ? (
-                <div>{errors.image4}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="name" placeholder="name" />
-              {errors.name && touched.name ? <div>{errors.name}</div> : null}
-            </div>
-            <div className="addInput">
-              <Field name="slug" placeholder="slug" />
-              {errors.slug && touched.slug ? <div>{errors.slug}</div> : null}
-            </div>
-            <div className="addInput">
-              <Field name="description" placeholder="description" />
-              {errors.description && touched.description ? (
-                <div>{errors.description}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="price" placeholder="price" />
-              {errors.price && touched.price ? <div>{errors.price}</div> : null}
-            </div>
-            <div className="addInput">
-              <Field name="availability" placeholder="availability" />
-              {errors.availability && touched.availability ? (
-                <div>{errors.availability}</div>
-              ) : null}
-            </div>
-            <div className="addInput">
-              <Field name="brand" placeholder="brand" />
-              {errors.brand && touched.brand ? <div>{errors.brand}</div> : null}
-            </div>
-
-            <button type="submit" className="subBtn">
-              Submit
-            </button>
-          </Form>
+      <div className="input">
+        <input
+          id="image1"
+          name="image1"
+          type="text"
+          placeholder="Image1"
+          onChange={handleChange}
+          value={values.image1}
+        />
+        {errors.image1 && touched.image1 && (
+          <p className="error">{errors.image1}</p>
         )}
-      </Formik>
+      </div>
+
+      <div className="input">
+        <input
+          id="image2"
+          name="image2"
+          type="text"
+          placeholder="Image2"
+          onChange={handleChange}
+          value={values.image2}
+        />
+        {errors.image2 && touched.image2 && (
+          <p className="error">{errors.image2}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="image3"
+          name="image3"
+          type="text"
+          placeholder="Image3"
+          onChange={handleChange}
+          value={values.image3}
+        />
+        {errors.image3 && touched.image3 && (
+          <p className="error">{errors.image3}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="image4"
+          name="image4"
+          type="text"
+          placeholder="Image4"
+          onChange={handleChange}
+          value={values.image4}
+        />
+        {errors.image4 && touched.image4 && (
+          <p className="error">{errors.image4}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="name"
+          onChange={handleChange}
+          value={values.name}
+        />
+        {errors.name && touched.name && <p className="error">{errors.name}</p>}
+      </div>
+
+      <div className="input">
+        <input
+          id="slugs"
+          name="slugs"
+          type="text"
+          placeholder="slugs"
+          onChange={handleChange}
+          value={values.slugs}
+        />
+        {errors.slugs && touched.slugs && (
+          <p className="error">{errors.slugs}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="price"
+          name="price"
+          type="text"
+          placeholder="price"
+          onChange={handleChange}
+          value={values.price}
+        />
+        {errors.price && touched.price && (
+          <p className="error">{errors.price}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="description"
+          name="description"
+          type="text"
+          placeholder="description"
+          onChange={handleChange}
+          value={values.description}
+        />
+        {errors.description && touched.description && (
+          <p className="error">{errors.description}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="availability"
+          name="availability"
+          type="text"
+          placeholder="availability"
+          onChange={handleChange}
+          value={values.availability}
+        />
+        {errors.availability && touched.availability && (
+          <p className="error">{errors.availability}</p>
+        )}
+      </div>
+
+      <div className="input">
+        <input
+          id="brand"
+          name="brand"
+          type="text"
+          placeholder="brand"
+          onChange={handleChange}
+          value={values.brand}
+        />
+        {errors.brand && touched.brand && (
+          <p className="error">{errors.brand}</p>
+        )}
+      </div>
+
+      <button onClick={() => productEdit()}> Edit </button>
     </div>
   );
 };

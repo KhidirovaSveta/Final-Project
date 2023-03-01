@@ -9,6 +9,7 @@ import Wishlist from "../pages/site/wishlist";
 import CartProducts from "../pages/site/cart";
 import AllProducts from "../pages/site/products";
 import NotFound from "../pages/site/notFound";
+import Recipes from "../pages/site/recipes";
 
 const Routing = () => {
   return (

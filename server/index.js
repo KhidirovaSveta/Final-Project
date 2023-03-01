@@ -6,6 +6,7 @@ const app = express();
 
 import sweetiesRoutes from "./routes/sweeties.js"
 import userRouter from "./routes/user.js"
+import recipesRoutes from "./routes/recipes.js"
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -13,7 +14,7 @@ app.use(cors());
 
 app.use("/sweeties", sweetiesRoutes);
 app.use("/user", userRouter);
-
+app.use("/recipes", recipesRoutes);
 
 mongoose.set("strictQuery", true);
 const port = 8080;

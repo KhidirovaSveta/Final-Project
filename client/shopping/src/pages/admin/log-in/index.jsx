@@ -6,8 +6,12 @@ import { FiChevronRight } from "react-icons/fi";
 import Button from "../../../components/button";
 import LogInSchema from "./schema";
 import logInUser from "../../../apiColls/user";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
+  const navigate = useNavigate();
+
   return (
     <div id="LogIn">
       <div className="container">
@@ -29,13 +33,27 @@ const LogIn = () => {
                 }}
                 validationSchema={LogInSchema}
                 onSubmit={async (values) => {
-                  await logInUser({
-                    email: values.email,
-                    password: values.password,
-                  });
-                  window.location.href = "/"
-                  localStorage.setItem("token", values.data)
+                  const response = await axios.post(
+                    "http://localhost:8080/user/signin",
+                    values
+                  );
+                  console.log(response);
+                  if (response.status === 200) {
+                    console.log(response.data);
+                    localStorage.setItem("token", response.data.token);
+                    navigate("/");
+                  } else {
+                    navigate("/signin");
+                  }
+                  // const response = await logInUser(values)
                 }}
+                //   await logInUser({
+                //     email: values.email,
+                //     password: values.password,
+                //   });
+                // window.location.href = "/"
+                //   localStorage.setItem("token", values.data)
+                // }}
               >
                 {({ errors, touched }) => (
                   <Form>

@@ -5,6 +5,8 @@ import { FiChevronRight } from "react-icons/fi";
 import RegisterSchema from "./schema/index";
 import { Formik, Form, Field } from "formik";
 import registerUser from "../../../apiColls/register";
+import axios from "axios";
+
 
 const Register = () => {
   return (
@@ -29,14 +31,27 @@ const Register = () => {
               }}
               validationSchema={RegisterSchema}
               onSubmit={async (values) => {
-                await registerUser({
-                  firstName: values.firstName,
-                  lastName: values.lastName,
-                  email: values.email,
-                  password: values.password,
-                });
-                window.location.href = "/login"
-                localStorage.setItem("token", values.data)
+                const response = await axios.post(
+                  "http://localhost:8080/user/signup",
+                  values
+                );
+                console.log(response);
+                if (response.status === 201) {
+                  console.log(response.data);
+                  localStorage.setItem("token", response.data.token);
+                  message.success(response.message);
+                  window.location.href = "/";
+                } else {
+                  message.error(response.message);
+                }
+                // await registerUser({
+                //   firstName: values.firstName,
+                //   lastName: values.lastName,
+                //   email: values.email,
+                //   password: values.password,
+                // });
+                // // window.location.href = "/login"
+                // localStorage.setItem("token", values.data)
               }}
             >
               {({ errors, touched }) => (

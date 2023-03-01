@@ -5,7 +5,6 @@ import { FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./index.scss";
 import { CiStar } from "react-icons/ci";
-import { FaRegEye } from "react-icons/fa";
 import {
   addData,
   deleteData,
@@ -103,16 +102,6 @@ const AllProducts = () => {
             className="product-search"
           />
 
-          <form action="">
-            <label htmlFor="sort"></label>
-            <select name="sort" id="sort">
-              <option value="lowest">
-                {" "}
-                <button onClick={() => handleSort()}>Price(lowest)</button>{" "}
-              </option>
-              <option value="lowest"> Price(highest) </option>
-            </select>
-          </form>
         </div>
 
         <div className="productCards">
@@ -151,15 +140,6 @@ const AllProducts = () => {
                     )}
 
                     <br />
-
-                    <button
-                      onClick={() => {
-                        return onOpen(), findId(product);
-                      }}
-                      className="chakraBtn"
-                    >
-                      <FaRegEye className="view action-icon" />
-                    </button>
 
                     <button
                       className="quick-add-btn"
