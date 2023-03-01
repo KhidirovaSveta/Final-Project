@@ -117,22 +117,29 @@ const Header = () => {
             </ul>
 
             <div className="action-icons">
-              <NavLink to={"/"}>
+              {/* <NavLink to={"/"}>
                 {" "}
                 <CiLogin className="action-icon  d-non logIn" />{" "}
-              </NavLink>
+              </NavLink> */}
 
               {/* <div className="customers">
-                {customers?.customers?.firstName == undefined ? (
+                {customers?.customers?.firstName ? (
                   <div onClick={() => setUser(!user)} className="user">
-                    <CiUser className="action-icon d-non" />{" "}
+                    <p>{customers.customers.firstName}</p>
                   </div>
                 ) : (
                   <div onClick={() => setUser(!user)} className="user">
-                    <p>{customers.firstName}</p>
+                    <CiUser className="action-icon d-non" />{" "}
                   </div>
                 )}
-              </div> */}
+              </div>
+
+              {customers?.customers?.firstName &&  <Button onClick={() => {
+                localStorage.removeItem("token")
+                navigate("/signin");
+              }}> Log out </Button>} */}
+
+              
 
               <NavLink to={"/login"}>
                 {" "}

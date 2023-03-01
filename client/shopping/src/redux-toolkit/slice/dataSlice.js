@@ -9,6 +9,7 @@ const initialState = {
 
 export const getData = createAsyncThunk("getData", async (value) => {
   const response = await axios.get("http://localhost:8080/sweeties");
+  console.log("user", response);
   if (value === 1) {
     return response.data.sort((a, b) => a.price - b.price);
   } else if (value) {
@@ -32,7 +33,7 @@ export const getDataSlice = createSlice({
   name: "sweeties",
   initialState,
   reducers: {
-    usersData: (state, action) => {
+    customersData: (state, action) => {
       state.customers = action.payload;
     }
   },

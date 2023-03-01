@@ -39,7 +39,7 @@ const LogIn = () => {
                   );
                   console.log(response);
                   if (response.status === 200) {
-                    console.log(response.data);
+                    console.log("respons", response.data);
                     localStorage.setItem("token", response.data.token);
                     navigate("/");
                   } else {
