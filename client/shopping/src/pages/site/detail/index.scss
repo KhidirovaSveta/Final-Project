@@ -23,10 +23,10 @@
     }
     .detail {
       display: flex;
-      justify-content: space-between;
+      column-gap: 50px;
       padding-bottom: 50px;
       .details-img {
-        width: 45%;
+        width: 40%;
       }
       .details-info {
         color: #6d4f4f;
@@ -61,15 +61,15 @@
         .price {
           font-size: 25px;
         }
-        .quantityParag{
+        .quantityParag {
           margin-top: 20px;
           font-weight: 600;
         }
-        .add-to-cart{
-          margin-top: 15px;
-          display: flex;
-          justify-content: space-between;
-          column-gap: 18px;
+        .add-to-cart {
+          margin-top: 25px;
+          // display: flex;
+          // justify-content: space-between;
+          // column-gap: 18px;
           .cart-product-quantity {
             display: flex;
             align-items: flex-start;
@@ -86,14 +86,12 @@
               cursor: pointer;
             }
           }
-          .detailAddBtn{
+          .detailBtn {
             width: 100%;
             padding: 12px 37px;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
-            background-color: transparent;
-            border: 1px solid #000;
             transition: all 0.4s;
             &:hover {
               background-color: #000;
@@ -101,8 +99,24 @@
               transform: scaleY(1.1);
             }
           }
+          .detailAddBtn {
+            background-color: transparent;
+            border: 1px solid #000;
+          }
+          .detailBuyBtn {
+            color: #fff;
+            margin-top: 20px;
+            background-color: #e34875;
+          }
         }
       }
+    }
+    .restProducts {
+      font-size: 44px;
+      color: #6d4f4f;
+      font-weight: 700;
+      margin: 25px 0;
+      padding-bottom: 40px;
     }
     @media only screen and (max-width: 765px) {
       .detail {
@@ -112,9 +126,9 @@
         .details-img {
           width: 100%;
         }
-        .details-info{
+        .details-info {
           width: 100%;
-          .add-to-cart{
+          .add-to-cart {
             margin-bottom: 30px;
           }
         }
@@ -146,8 +160,8 @@
   }
 
   @media only screen and (max-width: 765px) {
-    .container{
-      .productstabs{
+    .container {
+      .productstabs {
         padding: 20px 20px;
       }
     }

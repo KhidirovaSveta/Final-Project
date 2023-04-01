@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
-import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   addToCart,
@@ -115,7 +115,7 @@ const CartProducts = () => {
                 <p className="sub-parag">
                   Taxes and shipping calculated at checkout
                 </p>
-                <button>Check out</button>
+                <NavLink to={"/check-out"}> <button>Check out</button></NavLink>
                 <div className="continue-shopping">
                   <Link to="/">
                     <span>Continue Shopping</span>

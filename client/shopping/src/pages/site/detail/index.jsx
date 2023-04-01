@@ -29,6 +29,8 @@ import "./styles.scss";
 
 import { FreeMode, Pagination, Navigation } from "swiper";
 
+import Carousel from "../../../components/products-carousel"
+
 const Details = () => {
   const [product, setProduct] = useState([]);
   const { _id } = useParams();
@@ -127,21 +129,22 @@ const Details = () => {
             </div>
             <p className="price">${product.price}.00</p>
 
-            <p className="quantityParag">Quantity</p>
+            {/* <p className="quantityParag">Quantity</p> */}
             <div className="add-to-cart">
-              <div className="cart-product-quantity">
+              {/* <div className="cart-product-quantity">
                 <button onClick={() => handleDecreaseCart(product)}>-</button>
                 <div className="count">{product.cartQuantity}</div>
                 <button onClick={() => handleAddToCart(product)}>+</button>
-              </div>
+              </div> */}
 
               <button
                 onClick={() => handleAddToCart(product)}
-                className="detailAddBtn"
+                className="detailBtn detailAddBtn"
               >
                 {" "}
                 ADD TO CART{" "}
               </button>
+              <NavLink to={"/check-out"}> <button className="detailBtn detailBuyBtn"> BUY IT NOW </button></NavLink>
             </div>
           </div>
         </div>
@@ -169,6 +172,10 @@ const Details = () => {
             </TabPanel>
           </TabPanels>
         </Tabs>
+
+      <h1 className="restProducts">You Might Also Like</h1>
+      <Carousel/>
+
       </div>
     </div>
   );

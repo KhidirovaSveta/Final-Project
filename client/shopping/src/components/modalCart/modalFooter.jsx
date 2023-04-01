@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getTotals } from '../../redux-toolkit/slice/cartSlice';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./modalCartFooter.scss"
 
 const ModalCartFooter = () => {
@@ -25,7 +25,7 @@ const ModalCartFooter = () => {
                       <span>Subtotal</span>
                       <span className="amount">${cart.cartTotalAmount}.00</span>
                     </div>
-                    <button className="modalCheckBtn">Check out</button>
+                    <NavLink to={"/check-out"}>  <button className="modalCheckBtn">Check out</button></NavLink>
                     <div className="continue-shopping">
                       <Link to="/cart">
                         <span className="viewCart">View cart</span>

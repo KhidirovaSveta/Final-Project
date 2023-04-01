@@ -1,0 +1,98 @@
+#CheckOut {
+  background-color: #fffbf3;
+  color: #6d4f4f;
+  .check-out-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    .left {
+      width: 62%;
+      .checkOutHeader {
+        font-size: 25px;
+        font-weight: 700;
+      }
+      .navlink {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        column-gap: 10px;
+        padding-top: 10px;
+        margin-bottom: 50px;
+        font-size: 14px;
+        a {
+          text-decoration: none;
+          color: #6d4f4f;
+        }
+        .right {
+          opacity: 0.5;
+          font-size: 15px;
+        }
+      }
+      .contactİnfo{
+        margin-bottom: 12px;
+      }
+      .allInputs {
+        input {
+          padding: 7px 10px;
+          margin-bottom: 20px;
+          background-color: #fffbf3;
+          border: 1px solid #0000003e;
+          border-radius: 4px;
+          width: 50%;
+        }
+        .wInput {
+          width: 100%;
+        }
+      }
+      .continue-shopping {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        .spanBtn {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+        }
+        .shipping{
+          background-color: #e34875;
+          padding: 7px 10px;
+          border-radius: 5px;
+          color: #fff;
+        }
+      }
+    }
+    .right-section {
+      width: 40%;
+      border-left: 1px solid #0000003e;
+      padding-left: 17px;
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .cart-product {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          margin-bottom: 14px;
+          .product-check {
+            // border-bottom: 1px solid #0000003e;
+            width: 80px;
+          }
+        }
+      }
+      .cart-summary {
+        border-top: 1px solid #0000003e;
+        .cart-checkout {
+          margin-top: 20px;
+          color: #6d4f4f;
+          .subtotal {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

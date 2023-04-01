@@ -10,6 +10,7 @@ import CartProducts from "../pages/site/cart";
 import AllProducts from "../pages/site/products";
 import NotFound from "../pages/site/notFound";
 import Recipes from "../pages/site/recipes";
+import CheckOut from "../pages/site/check-out";
 
 const Routing = () => {
   return (
@@ -23,6 +24,7 @@ const Routing = () => {
         <Route path="/cart" element={<CartProducts />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/products" element={<AllProducts />} />
+        <Route path="/check-out" element={<CheckOut />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

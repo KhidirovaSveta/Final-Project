@@ -12,10 +12,10 @@ const SideBar = () => {
           <BiCart />
           <NavLink to={"/products"}> Products </NavLink>
         </li>
-        {/* <li>
+        <li>
           <BiUser />
-          <NavLink to={"/recipes"}> Recipes </NavLink>
-        </li> */}
+          <NavLink to={"/recipes"}> Users </NavLink>
+        </li>
 
         {/* <li>
           <BiCategory />
